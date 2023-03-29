@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "Audiowide";
+    src: url("../fonts/Audiowide-Regular.ttf");
+}
 * {
     margin: 0;
     box-sizing: border-box;

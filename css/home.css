@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Audiowide";
+    src: url("../fonts/Audiowide-Regular.ttf");
+}
+
 body {
     background-image: url("../img/home-background.jpg");
     background-size: cover;
