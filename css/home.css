@@ -74,7 +74,7 @@ nav ul li a::after {
     position: absolute;
     bottom: -5px;
     left: 2px;
-    transform: rotateY(90deg);
+    transform: rotateY(0deg);
 }
 
 a.home {
