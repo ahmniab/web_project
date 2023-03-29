@@ -71,7 +71,7 @@ input:focus {
 }
 
 .sign-in {
-    font-size: 35px;
+    font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 900;
     background-color: #3f5166;
@@ -87,7 +87,7 @@ input:focus {
 
 .signup {
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 25px;
     color: white;
     font-weight: 100;
     text-align: center;
