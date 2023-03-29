@@ -1,2 +1,3 @@
 # web_project
-fuclty
+
+Github repository for ease of collaboration on the project
