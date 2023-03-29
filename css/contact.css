@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: o;
+}
+
+body{
+    background-image: url(../img/Gclass.jpg);
+    background-size: cover;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    width: 40%;
+    
+    margin: 40px 450px auto;
+}
+.contact-left{
+    flex-basis: 10%;
+    padding: 100px 0px;
+}
+
+h1{
+    margin-bottom: 0px;
+}
+.container p{
+    margin-bottom: 10px;
+}
+h1{
+    color: #fff;
+}
+p{
+    color: #fff;
+}
+.contact-box{
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.input-group{
+    display: block;
+    color: #fff;
+}
+h3{
+    color: #fff;
+}
+.input-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-left: 50px;
+}
+.input-group{
+flex-basis: 30%;
+}
+input{
+    width: 30%;
+}
+input{
+    width: 300px;
+    border: none;
+    border-bottom: 10px solid #ccc;
+    outline: none;
+    padding-bottom: 10px;
+}
+textarea{
+    width: 100%;
+    border: 1px solid #000000;
+    outline: none;
+    padding: 60px 15px;
+    box-sizing: border-box;
+    
+}
+.massage{
+    color: #f1e9e9;
+}  
+
+.name{
+    width: 500px;
+}
+.subject
+{
+    margin-left: 50px;
+    margin-top: 50px;
+    padding-right: 100px;
+}
