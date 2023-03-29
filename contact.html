@@ -6,14 +6,27 @@
   <title>contact us</title>
   <link rel="stylesheet" href="css/ourframe.css">
   <link rel="stylesheet" href="css/contact.css">
+  <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+
   <div class="container">
+    <nav class="navbar">
+      <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="#">listing</a></li>
+          <li><a class="chosen">contact</a></li>
+          <li><a href="#">services</a></li>
+      </ul>
+  </nav>
     <h1>Connect With Us</h1>
     <p>We would love to respond to your queries and help you succeed. feel free to get in touch with us.</p>
     <div class="contact-box glass">
@@ -22,13 +35,17 @@
       <form>
 
         <div class="content">
-          <input type="text" placeholder="Name">
-          <input type="text" placeholder="Phone">
-          <input type="email  " placeholder="email">
-          <input type="text  " placeholder="subject">
+          <div class="group">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Phone">
+          </div>
+          <div class="group">
+            <input type="email  " placeholder="email">
+            <input type="text  " placeholder="subject">
+          </div>
           <textarea rows="5" placeholder="Your Massage"></textarea>
         </div>
-        <input type="submit" value="Send" class="submit">
+        <div><input type="submit" value="Send" class="submit"></div>
       </form>
 
 
