@@ -3,9 +3,11 @@
     src: url("../fonts/Audiowide-Regular.ttf");
 }
 
+
 body {
-    background-image: url("../img/home-background.jpg");
+    background: url("../img/home-background.jpg");
     background-size: cover;
+
 
 }
 
@@ -31,7 +33,7 @@ button {
     position: relative;
 }
 
-.container>:nth-child(2)>p:first-child {
+.container>:nth-child(1)>p:first-child {
     margin-bottom: 30px;
     font-family: 'Audiowide', Arial, cursive;
     font-size: 100px;
@@ -40,7 +42,7 @@ button {
 
 }
 
-.container>:nth-child(2)>p:nth-child(2) {
+.container>:nth-child(1)>p:nth-child(2) {
     font-family: sans-serif;
     font-size: 15px;
     text-align: center;
@@ -48,14 +50,14 @@ button {
 
 }
 
-.container>:nth-child(3) {
+.container>:nth-child(2) {
     display: flex;
     justify-content: center;
     font-family: 'Audiowide', Arial, cursive;
     font-size: 15px;
 }
 
-.container>:nth-child(3)>a:first-child button {
+.container>:nth-child(2)>a:first-child button {
     width: 250px;
     height: 40px;
     border-bottom-left-radius: 30px;
@@ -64,12 +66,12 @@ button {
 
 }
 
-.container>:nth-child(3)>a:first-child button:hover {
+.container>:nth-child(2)>a:first-child button:hover {
     background-color: rgb(185, 185, 185);
     transition-duration: 0.7s;
 }
 
-.container>:nth-child(3)>a:last-child button {
+.container>:nth-child(2)>a:last-child button {
 
     width: 250px;
     height: 40px;
@@ -79,7 +81,7 @@ button {
     background-color: black;
 }
 
-.container>:nth-child(3)>a:last-child button:hover {
+.container>:nth-child(2)>a:last-child button:hover {
     background-color: rgb(37, 37, 37);
     transition-duration: 0.7s;
 

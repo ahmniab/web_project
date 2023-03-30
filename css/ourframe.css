@@ -2,19 +2,21 @@
     font-family: "Audiowide";
     src: url("../fonts/Audiowide-Regular.ttf");
 }
-.glass{
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+
+.glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
+
 .navbar {
     font-family: 'Audiowide', Arial, cursive;
     position: sticky;
     top: 0;
-    width: 100%;
+    width: 50%;
     height: 100px;
     margin: 0 auto;
     background-color: #161616;
@@ -22,6 +24,24 @@
     border-bottom-right-radius: 20px;
     box-shadow: 5px 10px 20px #161616;
     z-index: 1;
+    /* transition-duration: 0.5s;
+    transition-timing-function: ease; */
+
+
+}
+
+/* .navbar:hover {
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+
+} */
+
+.navbar div {
+    width: 570px;
+    margin: 0 auto;
 }
 
 .navbar ul {

@@ -20,7 +20,7 @@ nav {
 
 .container {
     width: 40%;
-    margin: 0 auto;
+    margin: 46px auto 20px;
     width: 50%;
 }
 
@@ -35,9 +35,10 @@ nav {
     position: relative;
 
 }
-.logo{
+
+.logo {
     display: flex;
-    margin-left:  800px ;
+    margin-left: 800px;
     font-size: 30px;
     position: absolute;
     top: 35px;
@@ -110,6 +111,7 @@ form :last-child {
     align-content: center;
 
 }
-.logo i{
+
+.logo i {
     margin: 20px;
 }
