@@ -61,8 +61,10 @@ function updateThumbnail(dropZoneElement, file) {
 	if (file.type.startsWith("image/")) {
 		document.img.submit();
 
-	} 
+	}
 	else {
 		thumbnailElement.style.backgroundImage = null;
 	}
 }
+
+
