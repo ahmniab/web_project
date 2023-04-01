@@ -59,13 +59,10 @@ function updateThumbnail(dropZoneElement, file) {
 
 	// Show thumbnail for image files
 	if (file.type.startsWith("image/")) {
-		const reader = new FileReader();
+		document.img.submit();
 
-		reader.readAsDataURL(file);
-		reader.onload = () => {
-			thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-		};
-	} else {
+	} 
+	else {
 		thumbnailElement.style.backgroundImage = null;
 	}
 }
