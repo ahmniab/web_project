@@ -1,0 +1,89 @@
+@font-face {
+    font-family: "Audiowide";
+    src: url("../fonts/Audiowide-Regular.ttf");
+}
+
+
+body {
+    background: url("../img/listingsBG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.parent {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.693);
+}
+
+/* container */
+.container {
+    margin: 0 auto !important;
+    width: 50% !important;
+    color: white !important;
+    position: relative !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_bar_container {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    gap: 20px;
+}
+
+.search_bar {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    height: 25px;
+    width: 100%;
+    max-width: 620px;
+    background: rgba(255,255,255,0.2);
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 3px;
+    backdrop-filter: blur(4px) saturate(5);
+}
+
+.search_bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+    font-family: 'Arial';
+    color: white;
+}
+
+.search_bar button {
+    border: 0;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    background: #58629b;
+}
+
+.search_bar button img {
+    width: 25px;
+}
+
+.search_bar ::placeholder {
+    color: rgba(255,255,255,0.5);
+}
