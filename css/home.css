@@ -73,6 +73,7 @@ button {
     transition-timing-function: linear;
     text-decoration: none !important;
     color: #fff !important;
+    
 }
 
 .container>div:nth-child(2) a:hover {
@@ -80,7 +81,16 @@ button {
     border-width: 3px;
     color: #000 !important;
     background-color: #fff;
+    /* animation-play-state: running; */
 
+}
+.container>div:nth-child(2) a i{
+    /* animation-play-state: paused ; */
+    /* animation-fill-mode: none; */
+    
+}
+.container>div:nth-child(2) a i:hover{
+    /* animation-play-state: running; */
 }
 
 .container :nth-child(3) {

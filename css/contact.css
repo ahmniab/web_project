@@ -114,4 +114,5 @@ form :last-child {
 
 .logo i {
     margin: 20px;
+    cursor: pointer;
 }
