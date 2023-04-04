@@ -16,17 +16,19 @@
     <div class="parent">
         <div class="box glass">
             <h2>Sign up</h2>
-            <form>
-                <input class="us" type="text" placeholder="Username" required>
-                <input class="em" type="email" placeholder="Email" required>
-                <input class="n" type="text" placeholder="Phone number" required>
-                <input class="pass" type="password" placeholder="Password" required>
-                <input class="cpass" type="password" placeholder="Confirm Password" required>
-                <input class="sign-up" type="submit" value="sign up">
+            <h4 id="massege"></h4>
+            <form name="sign-up" action="signup.html">
+                <input class="us" type="text" placeholder="Username" >
+                <input class="em" type="email" placeholder="Email" >
+                <input class="n" type="text" placeholder="Phone number" >
+                <input class="pass" type="password" placeholder="Password"  id="password">
+                <input class="cpass" type="password" placeholder="Confirm Password"  id="cnfrmpassword">
+                <button type="button" class="sign-up" onclick="checkPasswords()">signup</button>
                 <div class="signin">
                     <p>Already have an account?</p><a class="new" href="signin.html">Sign in</a>
                 </div>
             </form>
+            <script src="js/checkpass.js"></script>
 
         </div>
     </div>
