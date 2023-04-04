@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link rel="stylesheet" href="css/signup.css">
+    <title>sign up</title>
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/signup.css">
     <link rel="stylesheet" href="css/ourframe.css">
+    
     <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
 
 </head>
@@ -16,13 +19,13 @@
     <div class="parent">
         <div class="box glass">
             <h2>Sign up</h2>
-            <h4 id="massege"></h4>
             <form name="sign-up" action="signup.html">
-                <input class="us" type="text" placeholder="Username" >
-                <input class="em" type="email" placeholder="Email" >
-                <input class="n" type="text" placeholder="Phone number" >
-                <input class="pass" type="password" placeholder="Password"  id="password">
-                <input class="cpass" type="password" placeholder="Confirm Password"  id="cnfrmpassword">
+                <input class="us" type="text" placeholder="Username">
+                <input class="em" type="email" placeholder="Email">
+                <input class="n" type="text" placeholder="Phone number">
+                <input class="pass" type="password" placeholder="Password" id="password">
+                <input class="cpass" type="password" placeholder="Confirm Password" id="cnfrmpassword">
+                <div class="alert alert-danger" role="alert" id="alert"></div>
                 <button type="button" class="sign-up" onclick="checkPasswords()">signup</button>
                 <div class="signin">
                     <p>Already have an account?</p><a class="new" href="signin.html">Sign in</a>

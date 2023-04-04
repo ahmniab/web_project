@@ -90,7 +90,8 @@ input:focus {
     color: white;
     cursor: pointer;
 }
-.sign-up:hover{
+
+.sign-up:hover {
     background-color: #516883;
     transition-duration: 0.5s;
 }
@@ -109,4 +110,12 @@ input:focus {
     color: #48a39d;
     font-family: serif;
     text-decoration: underline;
+}
+
+.alert {
+    display: none ;
+}
+.alert i {
+    margin-right: 5px;
+    animation-iteration-count: 3;
 }
