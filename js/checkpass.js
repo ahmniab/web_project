@@ -30,7 +30,7 @@ function checkPasswords() {
         }
         
         else{
-          document.sign-updateThumbnail.submit();
+          document.sign_up.submit();
         }
       }
     }
