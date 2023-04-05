@@ -3,6 +3,16 @@
     box-sizing: border-box;
 
 }
+::selection{
+    background-color: #434343;
+    color: #fff;
+
+}
+footer ::selection{
+    background-color: #bfbfbf;
+    color: #000;
+
+}
 video{
     height : 300px;
 }
@@ -12,7 +22,8 @@ nav {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-
+    /* background-color: #525252;
+    color: #fff; */
 }
 
 .container p:nth-child(2) {
