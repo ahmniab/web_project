@@ -22,13 +22,14 @@
     background-color: #161616;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    box-shadow: 0px 10px 20px #161616;
+    box-shadow: 0px 10px 10px #161616;
     z-index: 3;
     /* transition-duration: 0.5s;
     transition-timing-function: ease; */
 
 
 }
+
 /* nav.scrolled {
     width: 100%;
 } */
@@ -199,20 +200,40 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .spinner {
+}
+
+.spinner {
     border: 4px solid rgba(255, 255, 255, 0.1);
     border-top-color: #db9534;
     border-radius: 50%;
     width: 60px;
     height: 60px;
     animation: spin 1s infinite linear;
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
+}
+
+/* Change the background color of the scroll bar */
+::-webkit-scrollbar {
+    background-color: #4f4f4f;
+    width: 15px;
+
+}
+
+
+/* Change the color of the scroll bar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: #6a6a6a;
+    border-radius: 10px;
+}
+
+/* Change the color of the scroll bar track */
+::-webkit-scrollbar-track {
+    background-color: #434343;
+    border-radius: 10px;
+}
+
