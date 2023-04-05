@@ -220,7 +220,7 @@
 /* Change the background color of the scroll bar */
 ::-webkit-scrollbar {
     background-color: #4f4f4f;
-    width: 15px;
+    width: 13px;
 
 }
 
@@ -229,6 +229,12 @@
 ::-webkit-scrollbar-thumb {
     background-color: #6a6a6a;
     border-radius: 10px;
+
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #828282;
+
+
 }
 
 /* Change the color of the scroll bar track */
