@@ -4,12 +4,12 @@
 }
 
 ::selection {
-    background-color: #000;
+    background-color: #434343;
     color: #fff;
 }
 
 .container ::selection {
-    background-color: #fff;
+    background-color: #bfbfbf;
     color: #000;
 }
 
