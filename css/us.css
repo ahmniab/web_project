@@ -56,3 +56,20 @@ h4{
     border: solid;
     border-block-color: #0000;
 }
+::-webkit-scrollbar{
+    background-color: #3a325c;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #7c70ad;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #9e90d3;
+}
+::-webkit-scrollbar-track{
+    background-color: #5f50a1;
+}
+::-webkit-scrollbar-button{
+    background-color: #524780;
+
+}
+
