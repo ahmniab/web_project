@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+background-color: #28223f;
+color:#fff;
+}
+
+h1{
+   display: block;
+   margin: 75px;
+   text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+   margin-bottom: 150px;
+}
+.card img{
+    width: 150px;
+    margin-left: -75px;
+    border-radius: 50%;
+    position: absolute;
+    top: -70px;
+    left: 50%;
+}
+.card{
+
+    text-align: center;
+    padding:100px 30px 30px ;
+    margin-top: 100px;
+    background-color: #231e39;
+    height: 550px;
+    position: relative;
+    width: 450px;
+    border-radius: 36px;
+    box-shadow: 5px 5px 10px #7c70ad;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.leader{
+    margin: 0 auto;
+}
+h3{
+    font-size: 30px;
+}
+h4{
+    font-size: 25px;
+}
+.team img{
+    margin: 40px;
+    border-radius: 20%;
+    box-shadow: 5px 10px 10px#7c70ad;
+    border: solid;
+    border-block-color: #0000;
+}
