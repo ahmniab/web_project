@@ -21,7 +21,16 @@ h1{
     border-radius: 50%;
     position: absolute;
     top: -70px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    cursor: grab;
     left: 50%;
+}
+.card img:hover{
+    transform: scale(2);
+    border-radius: 20px;
+    transition-duration: 0.5s;
+
 }
 .card{
 
