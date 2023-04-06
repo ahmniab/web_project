@@ -38,6 +38,7 @@ form{
     justify-content: center;
     align-content: center;
     align-items: center;
+    position: relative;
 }
 
 h2 {
@@ -110,4 +111,9 @@ input:focus {
     cursor: pointer;
     font-family: serif;
     text-decoration: underline;
+}
+.back-home{
+    position: absolute;
+    top: 38px;
+    left: -103px;
 }
