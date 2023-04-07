@@ -13,6 +13,13 @@
 </head>
 
 <body>
+    <div class="drop-zone glass" id="drop-zone" style="display: none;">
+        <form name="img" action="index.html">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+        <span class="drop-zone__prompt">Drop file here or click to upload</span>
+        <input type="file" name="userimg" class="drop-zone__input">
+        </form>
+    </div>
     <div class="parent">
         <nav class="navbar">
             <div>
@@ -30,7 +37,7 @@
             <div class="info-box glass">
                 <div class="photo-box">
                     <img src="img/blank-profile.png">
-                    <div><i class="fa-regular fa-pen-to-square"></i></div>
+                    <div class="glass" onclick="toggleVisibility()"><i class="fa-regular fa-pen-to-square"></i></div>
                     <h2>Ahmed Hamdy</h2>
                 </div>
                 <h3>Profile Information</h3>
@@ -48,10 +55,11 @@
                         <input type="text" readonly value="password">
                     </div>
                 </div>
-                <button>Edit Profile</button>
+                <button onclick="toggleVisibility();">Edit Profile</button>
             </div>
         </div>
     </div>
+    <script src="js/ourframe.js"></script>
 </body>
 
 </html>

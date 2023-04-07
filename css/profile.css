@@ -5,10 +5,12 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	color: white;
 }
-.parent{
+
+.parent {
 	background-color: rgba(0, 0, 0, 0.468);
 	min-height: 100vh;
 }
+
 .container {
 	display: flex;
 	height: 85vh;
@@ -22,6 +24,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
 
 .photo-box img {
@@ -29,8 +32,31 @@ body {
 	height: 200px;
 	border-radius: 50%;
 	object-fit: cover;
+	cursor: grab;
+}
+.photo-box img:hover + div{
+	visibility: visible;
+
+
 }
 
+.photo-box div {
+	cursor: pointer;
+	transition-duration: 0.2s;
+	visibility: hidden;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+	color: rgb(32, 32, 32);
+	font-size: 30px;
+	position: absolute;
+	right: 102px;
+    bottom: 85px;
+	border: rgb(32, 32, 32) solid 2px;
+	width: 40px;
+	height: 40px;
+}
 
 .photo-box h2 {
 	margin-top: 10px;
@@ -45,6 +71,7 @@ body {
 	width: 400px;
 
 }
+
 .info-box .edite {
 	display: flex;
 	justify-content: center;
@@ -64,7 +91,7 @@ body {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-    font-size: 20px;
+	font-size: 20px;
 }
 
 .info-box li {
@@ -78,7 +105,7 @@ body {
 .info-box li strong {
 	display: inline-block;
 	width: 100px;
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .info-box button {
@@ -92,13 +119,14 @@ body {
 	padding: 10px 20px;
 	font-size: 16px;
 	cursor: pointer;
-    transition: background-color 0.3s;
+	transition: background-color 0.3s;
 }
 
 .info-box button:hover {
 	background-color: rgb(17, 17, 17);
 }
-input{
+
+input {
 	background-color: transparent;
 	border: 0 none;
 	height: 30px;
