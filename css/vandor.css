@@ -2,8 +2,13 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+    font-family: 'Trebuchet MS',  Arial;
+	background-image: url("../img/bmw2.jpg");
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}	
 .toggle{
     width: 50px;
     height: 50px;
@@ -27,7 +32,7 @@ background-color: #333;
 .photo{
     width: 100px;
 }
-nab{
+/* nab{
     position: fixed;
     z-index: 99999;
     left: 0;
@@ -41,11 +46,11 @@ nab{
     justify-content: center;
     transition: 0.5s;
     transform: translateX(-100%); 
-}
-nav .open {
+} */
+/* nav .open {
     transform: translateX(0); 
-}
-.close{
+} */
+/* .close{
     position: fixed;
     top: 10px;
     right: 20px;
@@ -60,11 +65,11 @@ nav .open {
     border-radius: 50%;
     transition: 0.5s;
     cursor: pointer;
-}
-.close:hover{
-    color: #8d3434;
+} */
+/* .close:hover{ */
+    /* color: #8d3434;
     border-color: #ad4f4f;
-}
+} */
 .container{
     color: #eee;
     text-decoration: none;
@@ -85,6 +90,7 @@ nav .open {
 	align-items: center;
 	justify-content: center;
 	position: relative;
+
 }
 
 .photo-box img {
@@ -111,7 +117,7 @@ nav .open {
 	color: rgb(32, 32, 32);
 	font-size: 30px;
 	position: absolute;
-	right: 102px;
+	right: 87px;
     bottom: 85px;
 	border: rgb(32, 32, 32) solid 2px;
 	width: 40px;
@@ -128,7 +134,16 @@ nav .open {
 
 .info-box {
 	padding: 50px;
-	width: 400px;
+	width: 450px;
+	transition-duration: 1s;
+	position: absolute;
+	top: 116px;
+	left: -428px;;
+
+
+}
+.info-box:hover{
+	transform: translateX(90%);
 
 }
 
@@ -192,6 +207,6 @@ input {
 	height: 30px;
 	margin: 6px 0;
 	font-size: 20px;
-	color: white;
+	color: black;
 	width: 150px
 }

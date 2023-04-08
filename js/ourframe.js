@@ -80,6 +80,7 @@ function scrollToBottom() {
 }
 function toggleVisibility() {
 	var element = document.getElementById("drop-zone");
-	element.style.display = "block";
+	element.style.display = "block" ;
+
 
 }
