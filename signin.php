@@ -1,3 +1,27 @@
+<?php
+
+include 'connection.php';
+session_start();
+if (isset($_SESSION['admin'])) {
+    if ($_SESSION['admin']) {
+        header('Location: admin_profile.php');
+        exit;
+    } else {
+        header('Location: user_profile.php');
+        exit;
+    }
+} elseif (isset($_COOKIE['user_name'])) {
+    $userInCookie = $_COOKIE['user_name'];
+    $userNameInfo = $conn->prepare("select * from users where user_name = '$userInCookie';");
+    $userNameInfo->execute();
+    $userNameResult = $userNameInfo->get_result();
+    $_SESSION = $userNameResult->fetch_assoc();
+    header('Location: index.php');
+    exit;
+
+} 
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -28,6 +52,10 @@
                 <h2>Sign in</h2>
                 <input class="username" type="text" placeholder="Username" required>
                 <input class="pass" type="password" placeholder="Password" required>
+                <div class="checkbox" >
+                <input type="checkbox" name="remember_me" id="remember_me">
+                <label for="remember_me">Remember me</label>
+                </div>
                 <input class="sign-in" type="submit" value="sign in">
                 <div class="signup">
                     <p>Dont have an account?</p><a class="new" href="signup.html">Sign up</a>
