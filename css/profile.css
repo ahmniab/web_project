@@ -1,0 +1,137 @@
+body {
+	background-image: url("../img/bmw2.jpg");
+	background-size: cover;
+	background-position: center;
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+}
+
+.parent {
+	background-color: rgba(0, 0, 0, 0.468);
+	min-height: 100vh;
+}
+
+.container {
+	display: flex;
+	height: 85vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.photo-box {
+	margin-top: -40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.photo-box img {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	object-fit: cover;
+	cursor: grab;
+}
+.photo-box img:hover + div{
+	visibility: visible;
+
+
+}
+
+.photo-box div {
+	cursor: pointer;
+	transition-duration: 0.2s;
+	visibility: hidden;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+	color: rgb(32, 32, 32);
+	font-size: 30px;
+	position: absolute;
+	right: 102px;
+    bottom: 85px;
+	border: rgb(32, 32, 32) solid 2px;
+	width: 40px;
+	height: 40px;
+}
+
+.photo-box h2 {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	font-size: 35px;
+	/* color: black; */
+	/* text-shadow: 1px 1px 3px black; */
+}
+
+.info-box {
+	padding: 50px;
+	width: 400px;
+
+}
+
+.info-box .edite {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	gap: 10px;
+}
+
+.info-box h3 {
+	text-align: center;
+	margin-top: 0;
+	font-size: 20px;
+	/* color: black; */
+
+}
+
+.info-box ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+}
+
+.info-box li {
+	margin-bottom: 10px;
+	/* color: black; */
+	font-size: 30px;
+	font-weight: 300;
+
+}
+
+.info-box li strong {
+	display: inline-block;
+	width: 100px;
+	font-weight: bold;
+}
+
+.info-box button {
+	display: block;
+	margin-top: 30px;
+	margin-right: auto;
+	background-color: #303e4d;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.info-box button:hover {
+	background-color: rgb(17, 17, 17);
+}
+
+input {
+	background-color: transparent;
+	border: 0 none;
+	height: 30px;
+	margin: 6px 0;
+	font-size: 20px;
+	color: white;
+	width: 150px
+}
