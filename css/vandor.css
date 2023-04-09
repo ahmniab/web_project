@@ -140,12 +140,12 @@ background-color: #333;
 	top: 116px;
 	left: -428px;;
 
+}
+.info-box:hover{
+	transform: translateX(90%);
+	transition-delay: 1s;
 
 }
-/* .info-box:hover{
-	transform: translateX(90%);
-
-} */
 
 .info-box .edite {
 	display: flex;
@@ -226,4 +226,9 @@ input {
 	flex-wrap: wrap;
 	align-content: center;
 	justify-content: center;
+	transition-duration: 1s;
+	/* transform: rotateY(-180deg); */
+}
+.fa-caret-right{
+	transition-duration: 1s;
 }
