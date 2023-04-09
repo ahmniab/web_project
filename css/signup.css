@@ -12,11 +12,14 @@
 body {
     background-image: url("../img/signin.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .parent {
     background-color: rgba(0, 0, 0, 0.645);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -34,7 +37,7 @@ form {
 
 .box {
     width: 30%;
-    height: 700px;
+    min-height: 700px;
     border-radius: 15px;
     box-shadow: 0px 1px 20px;
     display: flex;
@@ -113,8 +116,9 @@ input:focus {
 }
 
 .alert {
-    display: none ;
+    display: none;
 }
+
 .alert i {
     margin-right: 5px;
     animation-iteration-count: 3;

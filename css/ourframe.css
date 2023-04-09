@@ -110,6 +110,7 @@
 }
 
 .drop-zone {
+    
     animation: drop-zone 0.5s ease 0.2s 1;
     position: fixed;
     top: 50%;
@@ -128,7 +129,7 @@
     font-weight: 500;
     font-size: 20px;
     cursor: pointer;
-    color: #796048;
+    color: #181818;
     border-radius: 10px;
     z-index: 3;
 
@@ -163,7 +164,7 @@
 }
 
 .drop-zone__input {
-    display: none;
+    /* display: none; */
 }
 
 .drop-zone__thumb {

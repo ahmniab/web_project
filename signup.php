@@ -22,7 +22,7 @@
         <div class="box glass">
             <h2>Sign up</h2>
             <div class="alert alert-danger" role="alert" id="alert"></div>
-            <form name="sign_up" action="signup.php" method="post">
+                <form name="sign_up" action="signup.php" method="post">
                 <input class="us" type="text" name="user_name" placeholder="Username">
                 <input class="us" type="text" name="name" placeholder="Name">
                 <input class="em" type="email" name="email" placeholder="Email">
@@ -69,4 +69,7 @@
 $conn->close();
     
 ?>
+
+
+
 
