@@ -23,10 +23,11 @@
             <h2>Sign up</h2>
             <div class="alert alert-danger" role="alert" id="alert"></div>
             <form name="sign_up" action="signup.html">
-                <input class="us" type="text" placeholder="Username">
+                <input class="us" type="text" placeholder="Username" maxlength="10">
+                <input class="us" type="text" placeholder="Name">
                 <input class="em" type="email" placeholder="Email">
                 <input class="n" type="text" placeholder="Phone number">
-                <input class="pass" type="password" placeholder="Password" id="password">
+                <input class="pass" type="password" placeholder="Password" id="password" maxlength="15">
                 <input class="cpass" type="password" placeholder="Confirm Password" id="cnfrmpassword">
                 <button type="button" class="sign-up" onclick="checkPasswords()">sign up</button>
                 <div class="signin">

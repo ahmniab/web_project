@@ -110,6 +110,7 @@
 }
 
 .drop-zone {
+    
     animation: drop-zone 0.5s ease 0.2s 1;
     position: fixed;
     top: 50%;
