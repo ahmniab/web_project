@@ -4,7 +4,7 @@
 body{
     font-family: 'Trebuchet MS',  Arial;
 	background-image: url("../img/bmw2.jpg");
-	background-size: cover;
+	background-size: cover; 
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -147,6 +147,14 @@ background-color: #333;
 
 }
 
+
+/* .info-box:hover{
+	transform: translateX(90%);
+
+} */
+
+
+
 .info-box .edite {
 	display: flex;
 	justify-content: center;
@@ -209,6 +217,7 @@ input {
 	font-size: 20px;
 	color: black;
 	width: 150px
+
 }
 .open-btn {
 	position: absolute;
@@ -226,9 +235,11 @@ input {
 	flex-wrap: wrap;
 	align-content: center;
 	justify-content: center;
+
 	transition-duration: 1s;
 	/* transform: rotateY(-180deg); */
 }
 .fa-caret-right{
 	transition-duration: 1s;
+
 }

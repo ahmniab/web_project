@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
     <script src="js/ourframe.js"></script>
     <div class="drop-zone glass" id="drop-zone" style="display: none;">
         <form name="img" action="index.html">

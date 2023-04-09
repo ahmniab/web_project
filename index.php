@@ -1,3 +1,4 @@
+
 <div id="loading">
     <div class="spinner"></div>
 </div>
@@ -31,3 +32,4 @@ if (isset($_SESSION['admin'])) {
     header('Location: home.html');
     exit;
 }
+
