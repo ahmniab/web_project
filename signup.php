@@ -61,15 +61,15 @@
 
 
     if ($conn->query($sql) === TRUE) {
-    echo "تم إضافة بيانات المستخدم بنجاح";
-    } else {
+    echo "Regisetred Successfully";
+    } else {  
     echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-$conn->close();
+$conn->close(); 
     
 ?>
 
 
-
+ 
 
