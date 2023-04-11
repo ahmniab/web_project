@@ -243,3 +243,47 @@ input {
 	transition-duration: 1s;
 
 }
+.name{
+    background-color: cadetblue;
+    position: fixed;
+    margin: 250px;
+    top: -54px;
+    left: 45px;
+    padding: 25px;
+    font-size: 26px;
+    border-radius: 12px;
+    color: antiquewhite;
+}
+.model{
+    color: antiquewhite;
+    background-color: cadetblue;
+    position: fixed;
+    margin: 250px;
+    top: 75px;
+    left: 45px;
+    padding: 25px;
+    font-size: 26px;
+    border-radius: 12px;
+}
+.information{
+    color: antiquewhite;
+    background-color: cadetblue;
+    position: fixed;
+    margin: 250px;
+    top: 75px;
+    left: 45px;
+    padding: 25px;
+    font-size: 26px;
+    border-radius: 12px;
+    top: -60px;
+    margin-left: 661px;
+}
+
+.textarea{
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    width: 500px;
+    height: 500px;
+}
