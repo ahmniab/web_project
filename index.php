@@ -1,10 +1,4 @@
 
-<div id="loading">
-    <div class="spinner"></div>
-</div>
-<script src="js/ourframe.js"></script>
-
-
 <?php
 include 'connection.php';
 session_start();

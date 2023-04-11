@@ -1,37 +1,43 @@
-*{
-    box-sizing: border-box;
-}
-body{
-    font-family: 'Trebuchet MS',  Arial;
-	background-image: url("../img/bmw2.jpg");
-	background-size: cover; 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}	
-.toggle{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    background-color: #eee;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 8px;
+* {
+	box-sizing: border-box;
 }
 
-.toggle span{
-    width: 100%;
-    background-color: #777;
-    height: 4px;
-    transition: 0.6s;
+body {
+	font-family: 'Trebuchet MS', Arial;
+	background-image: url("../img/backgroud-car.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	color: #fff;
 }
-.toggle:hover span{
-background-color: #333;
+
+.toggle {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	background-color: #eee;
+	cursor: pointer;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 8px;
 }
-.photo{
-    width: 100px;
+
+.toggle span {
+	width: 100%;
+	background-color: #777;
+	height: 4px;
+	transition: 0.6s;
 }
+
+.toggle:hover span {
+	background-color: #333;
+}
+
+.photo {
+	width: 100px;
+}
+
 /* nab{
     position: fixed;
     z-index: 99999;
@@ -67,22 +73,31 @@ background-color: #333;
     cursor: pointer;
 } */
 /* .close:hover{ */
-    /* color: #8d3434;
+/* color: #8d3434;
     border-color: #ad4f4f;
 } */
-.container{
-    color: #eee;
-    text-decoration: none;
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 80px;
-    transition: 0.5s;
+.navbar {
+	background-color: #16161634 !important;
+	box-shadow: 0 0 0 !important;
 }
-.container:hover{
-    background-color: rgb(0 0 0 / 50%);
+.navbar ul li a {
+	
 }
+.container {
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-basis: 80px;
+	transition: 0.5s;
+}
+
+.container:hover {
+	background-color: rgb(0 0 0 / 50%);
+}
+
 .photo-box {
 	margin-top: -40px;
 	display: flex;
@@ -100,7 +115,8 @@ background-color: #333;
 	object-fit: cover;
 	cursor: grab;
 }
-.photo-box img:hover + div{
+
+.photo-box img:hover+div {
 	visibility: visible;
 
 
@@ -114,11 +130,11 @@ background-color: #333;
 	justify-content: center;
 	align-content: center;
 	flex-wrap: wrap;
-	color: rgb(32, 32, 32);
+	color: rgb(238, 238, 238);
 	font-size: 30px;
 	position: absolute;
 	right: 87px;
-    bottom: 85px;
+	bottom: 85px;
 	border: rgb(32, 32, 32) solid 2px;
 	width: 40px;
 	height: 40px;
@@ -138,12 +154,14 @@ background-color: #333;
 	transition-duration: 1s;
 	position: absolute;
 	top: 116px;
-	left: -428px;;
+	left: -446px;
+	
 
 }
-.info-box:hover{
-	transform: translateX(90%);
-	transition-delay: 1s;
+
+.info-box:hover {
+	transform: translateX(10%);
+	/* transition-delay: 1s; */
 
 }
 
@@ -215,10 +233,10 @@ input {
 	height: 30px;
 	margin: 6px 0;
 	font-size: 20px;
-	color: black;
+	color: rgb(255, 255, 255);
 	width: 150px
-
 }
+
 .open-btn {
 	position: absolute;
 	top: 50%;
@@ -235,11 +253,56 @@ input {
 	flex-wrap: wrap;
 	align-content: center;
 	justify-content: center;
-
 	transition-duration: 1s;
 	/* transform: rotateY(-180deg); */
 }
-.fa-caret-right{
-	transition-duration: 1s;
 
+.fa-caret-right {
+	transition-duration: 1s;
+	/* transition-delay: 1s; */
+
+}
+.name{
+    background-color: cadetblue;
+    position: fixed;
+    margin: 250px;
+    top: -54px;
+    left: 45px;
+    padding: 25px;
+    font-size: 26px;
+    border-radius: 12px;
+    color: antiquewhite;
+}
+.model{
+    color: antiquewhite;
+    background-color: cadetblue;
+    position: fixed;
+    margin: 250px;
+    top: 75px;
+    left: 45px;
+    padding: 25px;
+    font-size: 26px;
+    border-radius: 12px;
+}
+.information{
+    color: antiquewhite;
+    background-color: cadetblue;
+    position: fixed;
+    margin: 250px;
+    top: 75px;
+    left: 45px;
+    padding: 25px;
+    font-size: 26px;
+    border-radius: 12px;
+    top: -60px;
+    margin-left: 661px;
+}
+
+.textarea{
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    width: 500px;
+    height: 500px;
 }

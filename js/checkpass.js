@@ -1,3 +1,6 @@
+const alerm = document.getElementById("alert");
+alerm.style.display = "none";
+
 function msg(worning) {
   const alerm = document.getElementById("alert");
   alerm.style.display = "block";
