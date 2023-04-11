@@ -29,7 +29,7 @@ form{
 
 .box {
     width: 100%;
-    height: 600px;
+    height: 700px;
     border-radius: 15px;
     box-shadow: 0px 1px 20px;
     display: flex;
@@ -45,7 +45,7 @@ h2 {
     font-size: 40px;
     text-align: center;
     color: white;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 
 }
 
@@ -65,7 +65,9 @@ h2 {
     padding-left: 20px;
 
 }
-
+.pass {
+    margin-bottom: 20px;
+}
 input:focus {
     background-color: #55463800;
     transition-duration: 0.7s;
@@ -116,4 +118,18 @@ input:focus {
     position: absolute;
     top: 38px;
     left: -103px;
+}
+.checkbox {
+    padding: 20px;
+    /* margin-bottom: 20px; */
+    font-size: 25px;
+    color: #fff;
+}
+.checkbox input{
+    width: 20px;
+    height: 20px;
+}
+.alert-danger
+{
+    margin-bottom: 20px;
 }

@@ -33,8 +33,8 @@
             </div>
 
         </nav>
-        <div class="info-box glass" id="info-box" >
-            <div class="open-btn glass" id="open-btn" onclick="open_box();"><i class="fa-solid fa-caret-right" id="fa-caret-right"></i></div>
+        <div class="info-box glass" id="info-box" onclick="open_box();">
+            <div class="open-btn glass" id="open-btn" ><i class="fa-solid fa-caret-right" id="fa-caret-right"></i></div>
             <div class="photo-box">
                 <img src="img/blank-profile.png">
                 <div class="glass"><i class="fa-regular fa-pen-to-square"></i></div>
@@ -59,10 +59,12 @@
         <script>
             function open_box() {
                 if (document.getElementById("info-box").style.transform == "translateX(90%)") {
+                    // document.getElementById("info-box").style.transition-delay = "0s" ;
                     document.getElementById("info-box").style.transform = "translateX(0%)";
                     document.getElementById("fa-caret-right").style.transform = "rotateY(0deg)";
                 }
                 else {
+                    // document.getElementById("info-box").style.transition-delay = "0s" ;
                     document.getElementById("info-box").style.transform = "translateX(90%)";
                     document.getElementById("fa-caret-right").style.transform = "rotateY(-180deg)";
                 }

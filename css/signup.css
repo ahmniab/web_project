@@ -115,9 +115,9 @@ input:focus {
     text-decoration: underline;
 }
 
-.alert {
+/* .alert {
     display: none;
-}
+} */
 
 .alert i {
     margin-right: 5px;

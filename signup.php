@@ -1,3 +1,37 @@
+<?php
+
+include 'connection.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $user_name = $_POST['user_name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $name = $_POST['name'];
+
+    $userNameInfo = $conn->prepare("select * from users where user_name = '" . $user_name . "'");
+    $userNameInfo->execute();
+    $userNameResult = $userNameInfo->get_result();
+    $row = $userNameResult->fetch_assoc();
+    // print_r($row) ;
+    var_dump(empty($row['user_name']));
+
+    if (!empty($row['user_name'])) {
+        $wrongMsg = 'User name already exists';
+    } else {
+
+        $sql = "INSERT INTO users (user_name, email, password,profile,name) VALUES ('$user_name', '$email', '$password','blank-profile.png','$name')";
+        if ($conn->query($sql) === TRUE) {
+            setcookie("user_name", $user_name);
+            header('Location: index.php');
+            exit;
+        }
+        setcookie("user_name", $user_name);
+        header('Location: index.php');
+        exit;
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -17,12 +51,17 @@
 <body>
     <div id="loading">
         <div class="spinner"></div>
-      </div>
+    </div>
     <div class="parent">
         <div class="box glass">
             <h2>Sign up</h2>
+            <?php
+            if (isset($wrongMsg)) {
+                echo '<div class="alert alert-danger" role="alert"><i class="fa-solid fa-circle-exclamation fa-beat"></i>' . $wrongMsg . '</div>';
+            }
+            ?>
             <div class="alert alert-danger" role="alert" id="alert"></div>
-                <form name="sign_up" action="signup.php" method="post">
+            <form name="sign_up" action="signup.php" method="post">
                 <input class="us" type="text" name="user_name" placeholder="Username">
                 <input class="us" type="text" name="name" placeholder="Name">
                 <input class="em" type="email" name="email" placeholder="Email">
@@ -43,33 +82,3 @@
 </body>
 
 </html>
-  
-<?php
-    include 'connection.php';
-    
- 
-
-    $user_name = $_POST['user_name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $name = $_POST['name'];
-
-
-
-    $sql = "INSERT INTO users (user_name, email, password,profile,name)
-    VALUES ('$user_name', '$email', '$password','blank-profile.png','$name')";
-
-
-    if ($conn->query($sql) === TRUE) {
-    echo "تم إضافة بيانات المستخدم بنجاح";
-    } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-$conn->close();
-    
-?>
-
-
-
-
