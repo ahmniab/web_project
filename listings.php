@@ -1,3 +1,10 @@
+<?php
+    require_once 'connection.php';
+
+    $sql = "SELECT * FROM listings";
+    $all_prods = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,16 +49,22 @@
         </div>
 
         <div class="container">
-            <div>
-                <div class="card">
-                    <img src="img/logo.ico" alt="IMAGE">
-                    <div class="captions">
-                        <p class="product_name">Product Name</p>
-                        <p class="price">100,000$</p>
-                    </div>
-                    <button class="inspect">Inspect</button>
+            <?php
+                while ($row = mysqli_fetch_assoc($all_prods)) {
+            ?>
+            <div class="card">
+                <div style="height:200px">
+                    <img src="<?php echo $row["img"] ?>" alt="IMAGE" style="object-fit: contain;">
                 </div>
+                <div class="captions">
+                    <p class="product_name"><?php echo $row["name"] ?></p>
+                    <p class="price"><?php echo $row["price"] ?>$</p>
+                </div>
+                <button class="inspect">Inspect</button>
             </div>
+            <?php
+                }
+            ?>
         </div>
     </div>
     <script src="js/ourframe.js"></script>

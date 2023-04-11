@@ -27,13 +27,13 @@ button {
 }
 
 .container {
-    margin: 0 auto;
+    flex-wrap: wrap;
+    margin: auto;
     width: 90%;
     color: white;
-    position: relative;
     display: flex;
-    align-items: left;
-    justify-content: left;
+    justify-content: space-between;
+    align-content: start;
 }
 
 .search_bar_container {
@@ -95,6 +95,7 @@ button {
     display: block;
     justify-content: space-evenly;
     padding: 10px 10px;
+    margin: 30px 30px;
     font-family: sans-serif;
 }
 
