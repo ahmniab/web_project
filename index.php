@@ -11,6 +11,7 @@ if (isset($_SESSION['admin'])) {
         exit;
     }
 } elseif (isset($_COOKIE['user_name'])) {
+    
     $userInCookie = $_COOKIE['user_name'];
     $userNameInfo = $conn->prepare("select * from users where user_name = '$userInCookie';");
     $userNameInfo->execute();

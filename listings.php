@@ -1,8 +1,8 @@
 <?php
-    require_once 'connection.php';
+require_once 'connection.php';
 
-    $sql = "SELECT * FROM listings";
-    $all_prods = $conn->query($sql);
+$sql = "SELECT * FROM listings";
+$all_prods = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,24 @@
         <div class="spinner"></div>
     </div>
     <div class="parent">
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
+            <div>
+                <ul>
+                    <li><a href="index.php">home</a></li>
+                    <li><a class="chosen">listing</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                    <li><a href="About.html">about us</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="nav-btn" id="nav-btn">
+            <ul class="first">
+                <li><a><i class="fa-solid fa-house"></i></a></li>
+                <li><a><i class="fa-solid fa-car"></i></a></li>
+                <li><a><i class="fa-solid fa-headset"></i></a></li>
+                <li><a><i class="fa-solid fa-people-group"></i></a></li>
+
+            </ul>
             <div>
                 <ul>
                     <li><a href="index.php">home</a></li>
@@ -50,23 +67,55 @@
 
         <div class="container">
             <?php
-                while ($row = mysqli_fetch_assoc($all_prods)) {
+            while ($row = mysqli_fetch_assoc($all_prods)) {
             ?>
-            <div class="card">
-                <div style="height:200px">
-                    <img src="<?php echo $row["img"] ?>" alt="IMAGE" style="object-fit: contain;">
+                <div class="card">
+                    <div style="height:200px">
+                        <img src="<?php echo $row["img"] ?>" alt="IMAGE" style="object-fit: contain;">
+                    </div>
+                    <div class="captions">
+                        <p class="product_name"><?php echo $row["name"] ?></p>
+                        <p class="price"><?php echo $row["price"] ?>$</p>
+                    </div>
+                    <button class="inspect">Inspect</button>
                 </div>
-                <div class="captions">
-                    <p class="product_name"><?php echo $row["name"] ?></p>
-                    <p class="price"><?php echo $row["price"] ?>$</p>
-                </div>
-                <button class="inspect">Inspect</button>
-            </div>
             <?php
-                }
+            }
             ?>
+            <span id="up-btn" onclick="scrollToTop();">
+                <i class="fa-solid fa-angles-up"></i>
+            </span>
         </div>
     </div>
+    <script>
+        const navbarElement = document.getElementById('navbar');
+        const navbarElement2 = document.getElementById('nav-btn');
+        const upBtn = document.getElementById('up-btn');
+
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > 100) {
+                upBtn.style.transform = 'translateX(0%)';
+                navbarElement.style.top = '-100%';
+                navbarElement.style.transition = 'all 0.5s ease';
+                navbarElement.style.backdropFilter = 'all 0.5s ease';
+                navbarElement2.style.transform = 'translateX(0%)';
+
+            } else {
+                upBtn.style.transform = 'translateX(400%)';
+                navbarElement.style.top = '0%';
+                navbarElement2.style.transform = 'translateX(100%)';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
     <script src="js/ourframe.js"></script>
 
 </body>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/ourframe.css">
+    <style>
+        body{
+            min-height: 7000px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div>
+            <ul>
+                <li><a class="chosen">home</a></li>
+                <li><a href="listings.php">listing</a></li>
+                <li><a href="contact.html">contact</a></li>
+                <li><a href="About.html">about us</a></li>
+            </ul>
+        </div>
+        <!-- <a class="button"><button type="button" class="btn btn-outline-light"><i class="fa-solid fa-people-group"></i>Our Team</button></a> -->
+    </nav>
+    <script>
+        const navbarElement = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function () {
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > 10) {
+                // navbarElement.style.position = 'fixed';
+                navbarElement.style.right = '-100%';
+                navbarElement.style.transition = 'all 0.5s ease';
+                // navbarElement.style.backdropFilter = 'all 0.5s ease';
+
+            } else {
+                navbarElement.style.position = 'static';
+                navbarElement.style.right = 'auto';
+                navbarElement.style.transition = 'none';
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
