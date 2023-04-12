@@ -3,7 +3,7 @@
     session_start ();
 
     // if (!isset($_SESSION['username'])){
-    //     header('signin.php');
+    //     header('location: user_profile.php');
     //     exit();
     // }
 
@@ -18,7 +18,19 @@
     // $phone = $_SESSION ['phone'];
     $name = $_SESSION ['name'];
     $profile = $_SESSION ['profile'];
-    ?>
+
+    // Logout button logic
+    if(isset($_POST["logout"])){
+
+        $_SESSION = array();
+        
+
+        session_destroy();
+        
+        header("location: index.php");
+        exit ();
+    }
+?>
 
 
 
@@ -80,7 +92,10 @@
                         <input type="text" readonly value="phone">
                     </div>
                 </div>
-                <button onclick="toggleVisibility();">Edit Profile</button>
+                <button>Edit Profile</button>
+                <form action="user_profile.php" method="post">
+                    <button type="submit" name="logout">Logout</button>
+                </form>
             </div>
         </div>
     </div>
