@@ -1,3 +1,27 @@
+<?php
+
+    session_start ();
+
+    // if (!isset($_SESSION['username'])){
+    //     header('signin.php');
+    //     exit();
+    // }
+
+    // echo "<pre>";
+    
+    // print_r ($_SESSION);
+
+    // echo "</pre>";
+
+    $username = $_SESSION ['user_name'];
+    $email = $_SESSION ['email'];
+    // $phone = $_SESSION ['phone'];
+    $name = $_SESSION ['name'];
+    $profile = $_SESSION ['profile'];
+    ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,12 +59,11 @@
             <!-- <a class="button"><button type="button" class="btn btn-outline-light"><i class="fa-solid fa-people-group"></i>Our Team</button></a> -->
         </nav>
         <div class="container">
-
             <div class="info-box glass">
                 <div class="photo-box">
                     <img src="img/blank-profile.png">
                     <div class="glass" onclick="toggleVisibility()"><i class="fa-regular fa-pen-to-square"></i></div>
-                    <h2>Ahmed Hamdy</h2>
+                    <h2><?php echo $_SESSION ['name']; ?></h2>
                 </div>
                 <h3>Profile Information</h3>
                 <div class="edite">
@@ -51,10 +74,10 @@
                         <li>Phone:</li>
                     </ul>
                     <div class="info">
-                        <input type="text" readonly value="Username">
-                        <input type="text" readonly value="name">
-                        <input type="text" readonly value="email">
-                        <input type="text" readonly value="password">
+                        <input type="text" readonly value=<?php echo $_SESSION ['user_name']; ?>>
+                        <input type="text" readonly value=<?php echo $_SESSION ['name']; ?>>
+                        <input type="text" readonly value=<?php echo $_SESSION ['email']; ?>>
+                        <input type="text" readonly value="phone">
                     </div>
                 </div>
                 <button onclick="toggleVisibility();">Edit Profile</button>
