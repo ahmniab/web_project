@@ -1,6 +1,6 @@
 .drop-zone {
-	max-width: 200px;
-	height: 200px;
+	max-width: 300px;
+	height: 300px;
 	padding: 25px;
 	display: flex;
 	align-items: center;
@@ -11,7 +11,7 @@
 	font-size: 20px;
 	cursor: pointer;
 	color: #cccccc;
-	border: 4px dashed #009578;
+	border: 4px dashed #ccc;
 	border-radius: 10px;
 }
 

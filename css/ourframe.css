@@ -164,8 +164,8 @@
 }
 
 .drop-zone__input {
-    /* display: none; */
-}
+     display: none; 
+ } 
 
 .drop-zone__thumb {
     width: 100%;

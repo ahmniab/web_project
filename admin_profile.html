@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/ourframe.css">
     <link rel="stylesheet" href="css/drop-zone.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/vandor.css">
 
 </head>
 
 <body>
-    <?php
+    <!-- <?php
     if (isset($_FILES['photo'])) {
         $file_name = $_FILES['photo']['name'];
         $file_size = $_FILES['photo']['size'];
@@ -44,15 +45,9 @@
         }
     }
 
-    ?>
+    ?> -->
     <div class="parent">
-        <div class="drop-zone glass " id="drop-zone" style="display: none;">
-            <form name="img" action="index.html">
-                <i class="fa-solid fa-cloud-arrow-up"></i>
-                <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                <input type="file" name="userimg" class="drop-zone__input">
-            </form>
-        </div>
+
         <nav class="navbar">
             <div>
                 <ul>
@@ -64,50 +59,68 @@
             </div>
 
         </nav>
-        <div class="info-box glass left" id="info-box-left" onclick="open_left();">
-            <div class="open-btn glass" id="open-btn"><i class="fa-solid fa-caret-right" id="fa-caret-right"></i></div>
-            <div class="photo-box">
-                <img src="img/blank-profile.png">
-                <div class="glass"><i class="fa-regular fa-pen-to-square"></i></div>
-                <h2>Ahmed hamed</h2>
-            </div>
-            <div class="edite">
-                <ul>
-                    <li>Username:</li>
-                    <li>Name:</li>
-                    <li>Email:</li>
-                    <li>Phone:</li>
-                </ul>
-                <div class="info">
-                    <input type="text" readonly value="Username">
-                    <input type="text" readonly value="name">
-                    <input type="text" readonly value="email">
-                    <input type="text" readonly value="password">
+        <div class="container">
+            <div class="info-box glass left" id="info-box-left" onclick="open_left();">
+                <div class="open-btn glass" id="open-btn"><i class="fa-solid fa-caret-right" id="fa-caret-right"></i>
                 </div>
-            </div>
-            <button onclick="toggleVisibility();">Edit Profile</button>
-        </div>
-        <div class="info-box glass right" id="info-box-right" onclick="open_right();">
-            <h1>feed back page will appear here using iframe 👌😉</h1>
-            <h4>==> Ahmed Nabil</h4>
-
-            <div class="open-btn glass" id="open-btn">
-                <i class="fa-solid fa-caret-left" id="fa-caret-left"></i>
-            </div>
-
-
-        </div>
-        <div>
-
-            <form action="admin_profile.php" method="post">
-                <input type="text" name="car_name">
-                <input type="text" name="model">
-                <div class="drop-zone">
-                    <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                    <input type="file" name="img" class="drop-zone__input">
+                <div class="photo-box">
+                    <img src="img/blank-profile.png">
+                    <div class="glass"><i class="fa-regular fa-pen-to-square"></i></div>
+                    <h2>Ahmed hamed</h2>
                 </div>
-                <textarea name="caption" id=""></textarea>
-            </form>
+                <div class="edite">
+                    <ul>
+                        <li>Username:</li>
+                        <li>Name:</li>
+                        <li>Email:</li>
+                        <li>Phone:</li>
+                    </ul>
+                    <div class="info">
+                        <input type="text" readonly value="Username">
+                        <input type="text" readonly value="name">
+                        <input type="text" readonly value="email">
+                        <input type="text" readonly value="password">
+                    </div>
+                </div>
+                <button onclick="toggleVisibility();">Edit Profile</button>
+            </div>
+            <div class="info-box glass right" id="info-box-right" onclick="open_right();">
+                <h1>feed back page will appear here using iframe 👌😉</h1>
+                <h4>==> Ahmed Nabil</h4>
+
+                <div class="open-btn glass" id="open-btn">
+                    <i class="fa-solid fa-caret-left" id="fa-caret-left"></i>
+                </div>
+
+
+            </div>
+            <h1 >Add a new car</h1>
+            <div class="add-car">
+
+                <form action="admin_profile.php" method="post">
+                    <div class="car-info">
+                        <label for="car_name">Car Name</label>
+                        <input type="text" name="car_name" id="car_name">
+                        <label for="model">Car model</label>
+                        <input type="text" name="model" id="model">
+                        <textarea name="caption" placeholder="Car caption"></textarea>
+                    </div>
+                    <div>
+                        <div class="drop-zone">
+                            <span class="drop-zone__prompt">Drop file here or click to upload</span>
+                            <input type="file" name="img" class="drop-zone__input">
+                        </div>
+                        <input type="submit" value="Add The Car" class="btn btn-primary btn-lg" >
+                    </div>
+                </form>
+            </div>
+            <h1>Delete car</h1>
+            <div class="delete-car">
+                <form action="" method="post">
+                    <input type="text" name="car_num" class="car-num" placeholder="car number">
+                    <input type="submit" value="Delete car" class="btn btn-danger">
+                </form>
+            </div>
         </div>
         <script>
             function open_left() {
