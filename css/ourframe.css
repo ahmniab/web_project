@@ -100,7 +100,7 @@
 
 
 
-.bgblack {
+/* .bgblack {
     width: 100vw;
     height: 100vh;
     z-index: 2;
@@ -139,9 +139,9 @@
     0% {
         transform: scale(.2);
     }
-}
+} */
 
-.drop-zone form {
+/* .drop-zone form {
     box-sizing: border-box;
     padding: 30px;
     display: flex;
@@ -188,7 +188,7 @@
     background: rgba(0, 0, 0, 0.75);
     font-size: 14px;
     text-align: center;
-}
+} */
 
 #loading {
     position: fixed;
