@@ -2,6 +2,6 @@
 // let nav = document.querySelector("nav");
 // let close = document.querySelector(".close");
 
-function open() {
-    document.getElementById("info-box").style.transform = "translateX(100%)";
+function open_left() {
+    document.getElementById("info-box-left").style.transform = "translateX(100%)";
 };

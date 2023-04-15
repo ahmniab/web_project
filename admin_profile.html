@@ -15,7 +15,7 @@
 
 <body>
     <div class="parent">
-        <div class="drop-zone glass" id="drop-zone" style="display: none;">
+        <div class="drop-zone glass " id="drop-zone" style="display: none;">
             <form name="img" action="index.html">
                 <i class="fa-solid fa-cloud-arrow-up"></i>
                 <span class="drop-zone__prompt">Drop file here or click to upload</span>
@@ -33,8 +33,8 @@
             </div>
 
         </nav>
-        <div class="info-box glass" id="info-box" onclick="open_box();">
-            <div class="open-btn glass" id="open-btn" ><i class="fa-solid fa-caret-right" id="fa-caret-right"></i></div>
+        <div class="info-box glass left" id="info-box-left" onclick="open_left();">
+            <div class="open-btn glass" id="open-btn"><i class="fa-solid fa-caret-right" id="fa-caret-right"></i></div>
             <div class="photo-box">
                 <img src="img/blank-profile.png">
                 <div class="glass"><i class="fa-regular fa-pen-to-square"></i></div>
@@ -56,17 +56,40 @@
             </div>
             <button onclick="toggleVisibility();">Edit Profile</button>
         </div>
+        <div class="info-box glass right" id="info-box-right" onclick="open_right();">
+            <h1>feed back page will appear here using iframe 👌😉</h1>
+            <h4>==> Ahmed Nabil</h4>
+
+            <div class="open-btn glass" id="open-btn">
+                <i class="fa-solid fa-caret-left" id="fa-caret-left"></i>
+            </div>
+
+
+        </div>
         <script>
-            function open_box() {
-                if (document.getElementById("info-box").style.transform == "translateX(90%)") {
-                    // document.getElementById("info-box").style.transition-delay = "0s" ;
-                    document.getElementById("info-box").style.transform = "translateX(0%)";
+            function open_left() {
+                if (document.getElementById("info-box-left").style.transform == "translateX(90%)") {
+                    document.getElementById("info-box-left").style.transform = "translateX(0%)";
                     document.getElementById("fa-caret-right").style.transform = "rotateY(0deg)";
                 }
                 else {
-                    // document.getElementById("info-box").style.transition-delay = "0s" ;
-                    document.getElementById("info-box").style.transform = "translateX(90%)";
+                    document.getElementById("info-box-left").style.transform = "translateX(90%)";
                     document.getElementById("fa-caret-right").style.transform = "rotateY(-180deg)";
+                }
+            }
+
+            function open_right() {
+                if (document.getElementById("info-box-right").style.transform == "translateX(-90%)") {
+
+                    document.getElementById("info-box-right").style.transform = "translateX(0%)";
+                    document.getElementById("fa-caret-left").style.transform = "rotateY(0deg)";
+
+                }
+                else {
+
+                    document.getElementById("info-box-right").style.transform = "translateX(-90%)";
+                    document.getElementById("fa-caret-left").style.transform = "rotateY(-180deg)";
+
                 }
             }
         </script>

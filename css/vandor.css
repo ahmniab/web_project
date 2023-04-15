@@ -80,9 +80,9 @@ body {
 	background-color: #16161634 !important;
 	box-shadow: 0 0 0 !important;
 }
-.navbar ul li a {
-	
-}
+
+.navbar ul li a {}
+
 .container {
 	color: #ffffff;
 	text-decoration: none;
@@ -152,16 +152,29 @@ body {
 	padding: 50px;
 	width: 450px;
 	transition-duration: 1s;
-	position: absolute;
-	top: 116px;
-	left: -446px;
-	
-
+	z-index: 10;
+	position: fixed;
 }
 
+.left {
+	top: 116px;
+	left: -446px;
+}
+
+.info-box.right {
+	top: 48px;
+    right: -445px;
+    /* transform: translateX(-100%); */
+    height: 753px;
+
+}
 .info-box:hover {
-	transform: translateX(10%);
+	transform: translateX(2%);
 	/* transition-delay: 1s; */
+	
+}
+.info-box.right:hover{
+	transform: translateX(-2%);
 
 }
 
@@ -254,7 +267,14 @@ input {
 	align-content: center;
 	justify-content: center;
 	transition-duration: 1s;
+	cursor: pointer;
 	/* transform: rotateY(-180deg); */
+}
+.info-box.right .open-btn{
+	left: -21px;
+	border-radius: 5px;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
 }
 
 .fa-caret-right {
@@ -262,47 +282,50 @@ input {
 	/* transition-delay: 1s; */
 
 }
-.name{
-    background-color: cadetblue;
-    position: fixed;
-    margin: 250px;
-    top: -54px;
-    left: 45px;
-    padding: 25px;
-    font-size: 26px;
-    border-radius: 12px;
-    color: antiquewhite;
-}
-.model{
-    color: antiquewhite;
-    background-color: cadetblue;
-    position: fixed;
-    margin: 250px;
-    top: 75px;
-    left: 45px;
-    padding: 25px;
-    font-size: 26px;
-    border-radius: 12px;
-}
-.information{
-    color: antiquewhite;
-    background-color: cadetblue;
-    position: fixed;
-    margin: 250px;
-    top: 75px;
-    left: 45px;
-    padding: 25px;
-    font-size: 26px;
-    border-radius: 12px;
-    top: -60px;
-    margin-left: 661px;
+
+.name {
+	background-color: cadetblue;
+	position: fixed;
+	margin: 250px;
+	top: -54px;
+	left: 45px;
+	padding: 25px;
+	font-size: 26px;
+	border-radius: 12px;
+	color: antiquewhite;
 }
 
-.textarea{
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
-    width: 500px;
-    height: 500px;
+.model {
+	color: antiquewhite;
+	background-color: cadetblue;
+	position: fixed;
+	margin: 250px;
+	top: 75px;
+	left: 45px;
+	padding: 25px;
+	font-size: 26px;
+	border-radius: 12px;
+}
+
+.information {
+	color: antiquewhite;
+	background-color: cadetblue;
+	position: fixed;
+	margin: 250px;
+	top: 75px;
+	left: 45px;
+	padding: 25px;
+	font-size: 26px;
+	border-radius: 12px;
+	top: -60px;
+	margin-left: 661px;
+}
+
+.textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+	width: 500px;
+	height: 500px;
 }

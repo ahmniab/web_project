@@ -26,7 +26,7 @@
             </div>
 
         </nav>
-        <div class="info-box glass" id="info-box">
+        <div class="info-box glass left" id="info-box">
 
             <div class="open-btn glass" id="open-btn" onclick="open_box();">
                 <i class="fa-solid fa-caret-right" id="fa-caret-right"></i>
@@ -52,6 +52,14 @@
                 </div>
             </div>
             <button>Edit Profile</button>
+        </div>
+        <div class="info-box glass right" id="info-box">
+
+            <div class="open-btn glass" id="open-btn" onclick="open_box();">
+                <i class="fa-solid fa-caret-right" id="fa-caret-right"></i>
+            </div>
+
+            
         </div>
         <script>
             function open_box() {
