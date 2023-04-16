@@ -1,8 +1,8 @@
 <?php
-require_once 'connection.php';
+    require_once 'connection.php';
 
-$sql = "SELECT * FROM listings";
-$all_prods = $conn->query($sql);
+    $sql = "SELECT * FROM listings";
+    $select_prods = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -52,22 +52,36 @@ $all_prods = $conn->query($sql);
                 <ul>
                     <li><a href="index.php">home</a></li>
                     <li><a class="chosen">listing</a></li>
-                    <li><a href="contact.html">contact</a></li>
+                    <li><a href="contact.php">contact</a></li>
                     <li><a href="About.html">about us</a></li>
                 </ul>
             </div>
         </nav>
 
+        <?php
+            if (isset($_POST['searchButton'])) {
+                $search_term = mysqli_real_escape_string($conn, $_POST['Search']);
+
+                if ($searchTerm = '') {
+                    $newsql = "SELECT * FROM listings";
+                    $select_prods = $conn->query($newsql);
+                } else {
+                    $newsql = "SELECT * FROM listings WHERE name LIKE '%$search_term%'";
+                    $select_prods = $conn->query($newsql);
+                }
+            }
+        ?>
+
         <div class="search_bar_container">
-            <form action="listings.html" class="search_bar" method="post">
-                <input type="text" placeholder="search here!" name="Search" id="SearchBar">
-                <button type="submit"><img src="img/search.png" alt="Search"></button>
+            <form action="listings.php" class="search_bar" method="post">
+                <input type="text" placeholder="search here!" name="Search" id="SearchBar" value="<?php echo $search_term ?>">
+                <button type="submit" name="searchButton"><img src="img/search.png" alt="Search"></button>
             </form>
         </div>
 
         <div class="container">
             <?php
-            while ($row = mysqli_fetch_assoc($all_prods)) {
+            while ($row = mysqli_fetch_assoc($select_prods)) {
             ?>
                 <div class="card">
                     <div style="height:200px">
