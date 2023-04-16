@@ -1,8 +1,8 @@
 <?php 
 
+
     function countRows($table_name)
     {
-    include 'connection.php';
 
     $sql = "SELECT COUNT(*) as count FROM $table_name";
     $result = mysqli_query($conn, $sql);
@@ -25,4 +25,4 @@
     $row_count = countRows($table_name);
     echo "Number of rows in $table_name table: " . $row_count;
 
-?>
+

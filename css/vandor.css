@@ -379,3 +379,28 @@ input:focus{
 	margin-left: 661px;
 }
 
+.alert{
+	width: 995px;
+	margin: 60px auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.alert i {
+	visibility: hidden;
+	width: 30px;
+	height: 30px;
+	
+}
+.alert:hover i{
+	visibility: visible;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.alert i:hover{
+	cursor: pointer;
+	background-color: #e7fff4;
+	border-radius: 3px;
+}

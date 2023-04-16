@@ -28,18 +28,20 @@
     exit();
   }
 
-  if($file_size > 2097152){
-    echo 'File size must be less than 2 MB';
-    exit();
-  }
 
-  $upload_path = 'file/'.$file_name;
+  $upload_path = 'carimgs/'. 123 .".". $file_ext ;
 
-  if(move_uploaded_file($file_tmp,$upload_path)){
-    echo "Success! Your file has been uploaded.";
-  }else{
-    echo "Error uploading file.";
-  }
+  echo '<br>' ;
+  echo $file_tmp ;
+  echo '<br>' ;
+  // if(move_uploaded_file($file_tmp,$upload_path)){
+  //   echo "Success! Your file has been uploaded.";
+    // echo $file_tmp ;
+    // echo '<br>' ;
+
+  // }else{
+  //   echo "Error uploading file";
+  // }
 }
 
 

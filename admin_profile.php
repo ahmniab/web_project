@@ -16,44 +16,49 @@
 </head>
 
 <body>
-    <!-- <?php
-    if (isset($_FILES['photo'])) {
-        $file_name = $_FILES['photo']['name'];
-        $file_size = $_FILES['photo']['size'];
-        $file_tmp = $_FILES['photo']['tmp_name'];
-        $file_type = $_FILES['photo']['type'];
-        $file_ext = strtolower(end(explode('.', $_FILES['photo']['name'])));
+    <div style="display: none;">
+        <?php
+        include 'connection.php';
 
-        $extensions = array("jpeg", "jpg", "png");
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $rows = countRows('listings') + 1;
+            if (isset($_POST['car_name'])) {
+                $car_name = $_POST['car_name'];
+                $car_model = $_POST['model'];
+                $car_caption = $_POST['caption'];
+                if (isset($_FILES['img'])) {
+                    $file_name = $_FILES['img']['name'];
+                    $file_tmp = $_FILES['img']['tmp_name'];
+                    $file_type = $_FILES['img']['type'];
+                    $file_ext = strtolower(end(explode('.', $file_name)));
+                    $extensions = array("jpeg", "jpg", "png");
 
-        if (!in_array($file_ext, $extensions)) {
-            echo "Extension not allowed, please choose a JPEG, JPG, or PNG file.";
-            exit();
+                    if (!in_array($file_ext, $extensions)) {
+                        array_push($err, 'Extension not allowed, please choose a JPEG, JPG, or PNG file');
+                    }
+                    $upload_path = 'carimgs/' . $rows . '.' . $file_ext;
+                    if (!move_uploaded_file($file_tmp, $upload_path)) {
+                        array_push($err, 'Error in uploading file');
+                    } else {
+                        $file_name = $upload_path;
+                    }
+                }
+                if (!isset($file_name)) {
+                    array_push($err, "an error in file name");
+                }
+            }
         }
 
-        if ($file_size > 2097152) {
-            echo 'File size must be less than 2 MB';
-            exit();
-        }
-
-        $upload_path = 'file/' . $file_name;
-
-        if (move_uploaded_file($file_tmp, $upload_path)) {
-            echo "Success! Your file has been uploaded.";
-        } else {
-            echo "Error uploading file.";
-        }
-    }
-
-    ?> -->
+        ?>
+    </div>
     <div class="parent">
 
         <nav class="navbar">
             <div>
                 <ul>
                     <li><a class="chosen">home</a></li>
-                    <li><a href="listings.html">listing</a></li>
-                    <li><a href="contact.html">contact</a></li>
+                    <li><a href="listings.php">listing</a></li>
+                    <li><a href="contact.php">contact</a></li>
                     <li><a href="About.html">about us</a></li>
                 </ul>
             </div>
@@ -94,10 +99,27 @@
 
 
             </div>
-            <h1 >Add a new car</h1>
+            <?php
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                if (count($err) === 0) {
+                    $sql = "INSERT INTO listings (name,model,caption,img) VALUES ('$car_name', '$car_model', '$car_caption','$file_name')";
+                    if ($conn->query($sql)) {
+                        echo '<div class="alert alert-success" role="alert">Added successfully ! <i class="fa-solid fa-x"></i></div>';
+                    }
+                } else {
+                    foreach ($err as $one_err) {
+                        echo '<div class="alert alert-success" role="alert" id="alert-success">Added successfully !
+                              <i class="fa-solid fa-x" onclick="close_alert();"></i>
+                              </div>';
+                    }
+                }
+            }
+            ?>
+
+            <h1>Add a new car</h1>
             <div class="add-car">
 
-                <form action="admin_profile.php" method="post">
+                <form action="admin_profile.php" method="post" enctype="multipart/form-data">
                     <div class="car-info">
                         <label for="car_name">Car Name</label>
                         <input type="text" name="car_name" id="car_name">
@@ -110,7 +132,7 @@
                             <span class="drop-zone__prompt">Drop file here or click to upload</span>
                             <input type="file" name="img" class="drop-zone__input">
                         </div>
-                        <input type="submit" value="Add The Car" class="btn btn-primary btn-lg" >
+                        <input type="submit" value="Add The Car" class="btn btn-primary btn-lg">
                     </div>
                 </form>
             </div>
@@ -122,31 +144,6 @@
                 </form>
             </div>
         </div>
-        <script>
-            function open_left() {
-                if (document.getElementById("info-box-left").style.transform == "translateX(90%)") {
-                    document.getElementById("info-box-left").style.transform = "translateX(0%)";
-                    document.getElementById("fa-caret-right").style.transform = "rotateY(0deg)";
-                } else {
-                    document.getElementById("info-box-left").style.transform = "translateX(90%)";
-                    document.getElementById("fa-caret-right").style.transform = "rotateY(-180deg)";
-                }
-            }
-
-            function open_right() {
-                if (document.getElementById("info-box-right").style.transform == "translateX(-90%)") {
-
-                    document.getElementById("info-box-right").style.transform = "translateX(0%)";
-                    document.getElementById("fa-caret-left").style.transform = "rotateY(0deg)";
-
-                } else {
-
-                    document.getElementById("info-box-right").style.transform = "translateX(-90%)";
-                    document.getElementById("fa-caret-left").style.transform = "rotateY(-180deg)";
-
-                }
-            }
-        </script>
         <script src="js/ourframe.js"></script>
         <script src="js/drop-zone.js"></script>
 </body>

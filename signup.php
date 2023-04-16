@@ -83,26 +83,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </html>
   
 <?php
-    include 'connection.php';
+    // include 'connection.php';
     
  
 
-    $user_name = $_POST['user_name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $name = $_POST['name'];
+    // $user_name = $_POST['user_name'];
+    // $email = $_POST['email'];
+    // $password = $_POST['password'];
+    // $name = $_POST['name'];
 
 
 
-    $sql = "INSERT INTO users (user_name, email, password,profile,name)
-    VALUES ('$user_name', '$email', '$password','blank-profile.png','$name')";
+    // $sql = "INSERT INTO users (user_name, email, password,profile,name)
+    // VALUES ('$user_name', '$email', '$password','blank-profile.png','$name')";
 
 
-    if ($conn->query($sql) === TRUE) {
-    echo "Regisetred Successfully";
-    } else {  
-    echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    // if ($conn->query($sql) === TRUE) {
+    // echo "Regisetred Successfully";
+    // } else {  
+    // echo "Error: " . $sql . "<br>" . $conn->error;
+    // }
 
 $conn->close(); 
      
