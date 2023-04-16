@@ -59,6 +59,8 @@
         </nav>
 
         <?php
+            $search_term = '';
+
             if (isset($_POST['searchButton'])) {
                 $search_term = mysqli_real_escape_string($conn, $_POST['Search']);
 
