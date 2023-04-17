@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/ourframe.css">
     <link rel="stylesheet" href="css/drop-zone.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/vandor.css">
+    <link rel="stylesheet" href="css/admin.css">
 
 </head>
 
@@ -19,7 +19,7 @@
     <div style="display: none;">
         <?php
         include 'connection.php';
-
+        session_start();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $rows = countRows('listings') + 1;
             if (isset($_POST['car_name'])) {
@@ -71,7 +71,9 @@
                 <div class="photo-box">
                     <img src="img/blank-profile.png">
                     <div class="glass"><i class="fa-regular fa-pen-to-square"></i></div>
-                    <h2>Ahmed hamed</h2>
+                    <h2>
+                        <?php echo $_SESSION['name']; ?>
+                    </h2>
                 </div>
                 <div class="edite">
                     <ul>
@@ -81,9 +83,9 @@
                         <li>Phone:</li>
                     </ul>
                     <div class="info">
-                        <input type="text" readonly value="Username">
-                        <input type="text" readonly value="name">
-                        <input type="text" readonly value="email">
+                        <input type="text" readonly value=<?php echo $_SESSION['user_name']; ?>>
+                        <input type="text" readonly value=<?php echo $_SESSION['name']; ?>>
+                        <input type="text" readonly value=<?php echo $_SESSION['email']; ?>>
                         <input type="text" readonly value="password">
                     </div>
                 </div>
