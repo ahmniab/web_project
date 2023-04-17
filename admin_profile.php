@@ -63,8 +63,7 @@
                 </ul>
             </div>
             <div class="profile">
-                <!-- <img src="<?php echo $_SESSION['profile']; ?>" alt="error"> -->
-                <img src="img/blank-profile.png" alt="error" onclick="dropList();">
+                <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();">
                 <div class="drop-list" >
                     <ul id="drop-list">
                         <li><a href="user_profile.php">profile</a></li>
@@ -92,7 +91,7 @@
 
 
             </div>
-            <!-- <?php
+            <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (count($err) === 0) {
                     $sql = "INSERT INTO listings (name,model,caption,img) VALUES ('$car_name', '$car_model', '$car_caption','$file_name')";
@@ -107,7 +106,7 @@
                     }
                 }
             }
-            ?> -->
+            ?> 
 
             <h1>Add a new car</h1>
             <div class="add-car">
