@@ -13,7 +13,7 @@
 }
 
 .navbar {
-    font-family: 'Audiowide', Arial, cursive !important;
+    font-family: 'Audiowide', Arial !important;
     position: sticky;
     top: 0;
     width: 100%;
@@ -32,11 +32,54 @@
 
 
 
-.navbar div {
+.navbar div:first-child {
     width: 650px;
     margin: 0 auto;
 }
+.navbar .profile{
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+}
+.navbar .profile ul::before{
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: 4px;
+    /* background-color: #000; */
+    border-top: transparent solid;
+    border-left: 20px transparent solid;
+    border-bottom: 29px #ccc solid;
+    border-right: 20px transparent solid;
+    
+}
+.navbar .profile ul {
+    
+    margin-top: 20px;
+    width: 150px;
+    height: 160px;
+    background-color: #ccc;
+    color: #000000;
+    border-radius: 5px;
+	font-family: 'Trebuchet MS', Arial ;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 
+}
+
+.navbar .profile ul li {
+    list-style: none;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.navbar .profile img{
+    width: 100%;
+    border-radius: 5px;
+}
 .navbar ul {
     display: flex;
     justify-content: space-evenly;
@@ -46,11 +89,11 @@
     position: relative;
 }
 
-.navbar ul li {
+.navbar > div:first-child ul li {
     list-style: none;
     margin-top: 35px;
     font-size: 20px;
-    font-family: 'Audiowide', Arial, cursive;
+    font-family: 'Audiowide', Arial;
     text-transform: capitalize;
 }
 
@@ -58,6 +101,9 @@
     color: white;
     position: relative;
     text-decoration: none;
+}
+.navbar .profile a{
+    color: #000;
 }
 
 .navbar ul li a::after {
@@ -69,6 +115,9 @@
     bottom: -5px;
     left: 0px;
     transform: rotateY(90deg);
+}
+.navbar .profile ul li a::after{
+    background-color: #000;
 }
 
 .navbar ul li:hover a::after {

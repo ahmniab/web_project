@@ -13,13 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userNameResult = $userNameInfo->get_result();
     $row = $userNameResult->fetch_assoc();
     // print_r($row) ;
-    var_dump(empty($row['user_name']));
+    // var_dump(empty($row['user_name']));
 
     if (!empty($row['user_name'])) {
         $wrongMsg = 'User name already exists';
     } else {
 
-        $sql = "INSERT INTO users (user_name, email, password,profile,name) VALUES ('$user_name', '$email', '$password','blank-profile.png','$name')";
+        $sql = "INSERT INTO users (user_name, email, password,profile,name) VALUES ('$user_name', '$email', '$password','img/blank-profile.png','$name')";
         if ($conn->query($sql) === TRUE) {
             setcookie("user_name", $user_name);
             header('Location: index.php');

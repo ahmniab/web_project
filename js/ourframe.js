@@ -49,3 +49,20 @@ function open_right() {
 function close_alert() {
 	document.getElementById("alert-success").style.display = "none";
 }
+
+function dropList() {
+	var droplist = document.getElementById("drop-list");
+
+	if (droplist.style.display=="none") {
+		droplist.style.display = "flex";
+	}
+
+	else {
+		droplist.style.display = "none";
+
+	}
+}
+function logout() {
+	document.logout_btn.submit();
+	
+} 

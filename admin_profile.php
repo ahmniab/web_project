@@ -17,7 +17,7 @@
 
 <body>
     <div style="display: none;">
-        <?php
+        <!-- <?php
         include 'connection.php';
         session_start();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -49,7 +49,7 @@
             }
         }
 
-        ?>
+        ?> -->
     </div>
     <div class="parent">
 
@@ -62,35 +62,26 @@
                     <li><a href="About.html">about us</a></li>
                 </ul>
             </div>
-
-        </nav>
-        <div class="container">
-            <div class="info-box glass left" id="info-box-left" onclick="open_left();">
-                <div class="open-btn glass" id="open-btn"><i class="fa-solid fa-caret-right" id="fa-caret-right"></i>
-                </div>
-                <div class="photo-box">
-                    <img src="img/blank-profile.png">
-                    <div class="glass"><i class="fa-regular fa-pen-to-square"></i></div>
-                    <h2>
-                        <?php echo $_SESSION['name']; ?>
-                    </h2>
-                </div>
-                <div class="edite">
-                    <ul>
-                        <li>Username:</li>
-                        <li>Name:</li>
-                        <li>Email:</li>
-                        <li>Phone:</li>
+            <div class="profile">
+                <!-- <img src="<?php echo $_SESSION['profile']; ?>" alt="error"> -->
+                <img src="img/blank-profile.png" alt="error" onclick="dropList();">
+                <div class="drop-list" >
+                    <ul id="drop-list">
+                        <li><a href="user_profile.php">profile</a></li>
+                        <li>
+                            <a>
+                                <form action="" method="post" style="cursor: pointer;" name="logout_btn" onclick="logout();">logout<i
+                                        class="fa-solid fa-right-from-bracket"></i></form>
+                            </a>
+                        </li>
                     </ul>
-                    <div class="info">
-                        <input type="text" readonly value=<?php echo $_SESSION['user_name']; ?>>
-                        <input type="text" readonly value=<?php echo $_SESSION['name']; ?>>
-                        <input type="text" readonly value=<?php echo $_SESSION['email']; ?>>
-                        <input type="text" readonly value="password">
-                    </div>
                 </div>
-                <button onclick="toggleVisibility();">Edit Profile</button>
             </div>
+        </nav>
+        <script>
+
+        </script>
+        <div class="container">
             <div class="info-box glass right" id="info-box-right" onclick="open_right();">
                 <h1>feed back page will appear here using iframe 👌😉</h1>
                 <h4>==> Ahmed Nabil</h4>
@@ -101,7 +92,7 @@
 
 
             </div>
-            <?php
+            <!-- <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (count($err) === 0) {
                     $sql = "INSERT INTO listings (name,model,caption,img) VALUES ('$car_name', '$car_model', '$car_caption','$file_name')";
@@ -116,7 +107,7 @@
                     }
                 }
             }
-            ?>
+            ?> -->
 
             <h1>Add a new car</h1>
             <div class="add-car">
