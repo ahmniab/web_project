@@ -63,7 +63,7 @@
                 </ul>
             </div>
             <div class="profile">
-                <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();">
+                <img class='img-profile' src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();">
                 <div class="drop-list" >
                     <ul id="drop-list">
                         <li><a href="user_profile.php">profile</a></li>

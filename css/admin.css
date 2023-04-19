@@ -12,6 +12,9 @@ body {
 	background-color: #212529;
 	color: #fff;
 }
+.profile.img-profile{
+	cursor: pointer;
+}
 
 .toggle {
 	width: 50px;
