@@ -13,22 +13,24 @@
 
     // echo "</pre>";
 
-    $username = $_SESSION ['user_name'];
-    $email = $_SESSION ['email'];
-    // $phone = $_SESSION ['phone'];
-    $name = $_SESSION ['name'];
-    $profile = $_SESSION ['profile'];
-
     // Logout button logic
     if(isset($_POST["logout"])){
 
-        $_SESSION = array();
-        
+        if(isset($_COOKIE["user_name"])){
 
+            setcookie("user_name","" , time() - 60 * 60 * 24 * 30);
+
+        }
+
+        $_SESSION = array();
         session_destroy();
         
         header("location: index.php");
         exit ();
+    }
+    elseif (isset($_POST["edit"])){
+
+        header("location: edit_profile.php");
     }
 ?>
 
@@ -64,7 +66,7 @@
                 <ul>
                     <li><a class="chosen">home</a></li>
                     <li><a href="listings.php">listing</a></li>
-                    <li><a href="contact.php">contact</a></li>
+                    <li><a href="contact.html">contact</a></li>
                     <li><a href="About.html">about us</a></li>
                 </ul>
             </div>
@@ -92,8 +94,8 @@
                         <input type="text" readonly value="phone">
                     </div>
                 </div>
-                <button>Edit Profile</button>
                 <form action="user_profile.php" method="post">
+                    <button type="submit" name="edit">Edit Profile</button>
                     <button type="submit" name="logout">Logout</button>
                 </form>
             </div>
