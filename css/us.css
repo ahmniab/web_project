@@ -23,7 +23,7 @@ h1{
     top: -70px;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
-    cursor: grab;
+    cursor: pointer;
     left: 50%;
 }
 .card img:hover{
@@ -64,6 +64,7 @@ h4{
     box-shadow: 5px 10px 10px#7c70ad;
     border: solid;
     border-block-color: #0000;
+    cursor: pointer;
 }
 ::-webkit-scrollbar{
     background-color: #3a325c;
