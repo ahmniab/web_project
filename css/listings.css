@@ -5,20 +5,23 @@
 
 
 body {
-    background: url("../img/backgroud-car.jpg");
+    /* background: url("../img/backgroud-car.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center; */
+    background-color: #212529;
 }
 
 a {
     color: white;
     text-decoration: none;
 }
-.navbar{
-    background-color: transparent !important;
-    box-shadow: 0 0 0 transparent !important;
+
+
+.navbar {
+    background-color: #1e2125 !important;
+    box-shadow: 0 0 0 !important;
 }
 
 button {
@@ -27,7 +30,7 @@ button {
 
 .parent {
     min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.693);
+    /* background-color: rgba(0, 0, 0, 0.693); */
 }
 
 .container {
@@ -56,10 +59,10 @@ button {
     height: 25px;
     width: 100%;
     max-width: 620px;
-    background: rgba(255,255,255,0.2);
     align-items: center;
     border-radius: 60px;
     padding: 10px 3px;
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(4px) saturate(5);
 }
 
@@ -88,14 +91,16 @@ button {
 }
 
 .search_bar ::placeholder {
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 /* ============= Card Temp #1 ============= */
 
 .card {
+    /* background: rgba(255, 255, 255, 0.2); */
+    /* backdrop-filter: blur(4px); */
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px) saturate(5);
     display: block;
     justify-content: space-evenly;
     padding: 10px 10px;
@@ -112,7 +117,7 @@ button {
 
 .card button {
     width: 100%;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     border: 0;
     outline: none;
     padding: 5px;
@@ -178,7 +183,7 @@ button {
 } */
 
 /* ////////////////////////////////////// */
-.nav-btn{
+.nav-btn {
     color: white;
     position: fixed;
     top: 0px;
@@ -197,7 +202,7 @@ button {
     transition-duration: 0.5s;
 }
 
-.nav-btn ul.first{
+.nav-btn ul.first {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -213,18 +218,22 @@ button {
     transition-duration: 0.5s;
     transition-delay: 0.1s;
 }
-.nav-btn:hover .first{
+
+.nav-btn:hover .first {
     width: 100px;
     transition-delay: 0.5s;
 
 }
-.nav-btn ul li{
+
+.nav-btn ul li {
     margin: 20px 0;
 }
-.nav-btn ul li:nth-child(1){
+
+.nav-btn ul li:nth-child(1) {
     margin-top: 50px;
 }
-.nav-btn div{
+
+.nav-btn div {
     background-color: #1e2236;
     width: 270px;
     height: 100vh;
@@ -239,26 +248,30 @@ button {
     transform: translateX(100%);
     transition-duration: 0.5s;
 }
-.nav-btn:hover div{
+
+.nav-btn:hover div {
     transform: translateX(0);
     transition-delay: 1s;
 
 
 }
+
 .nav-btn div ul {
     list-style: none;
     padding: 0;
 }
-.nav-btn:hover div ul li:hover{
+
+.nav-btn:hover div ul li:hover {
     color: aquamarine;
 }
-.nav-btn div ul li {
 
-}
-.nav-btn div ul li{
+.nav-btn div ul li {}
+
+.nav-btn div ul li {
     margin: 30px 0;
     position: relative;
 }
+
 .nav-btn div ul li a::after {
     content: "";
     width: 100%;
@@ -274,7 +287,8 @@ button {
     transform: rotateY(0deg);
     transition-duration: 0.5s;
 }
-.navbar ul li a.chosen::after {
+
+.nav-btn ul li a.chosen::after {
     content: "";
     background-color: white;
     width: 100%;
@@ -285,8 +299,8 @@ button {
     left: 0;
 }
 
-#up-btn{
-    background-color: #1e2236;
+#up-btn {
+    background-color: #2f3454;
     color: white;
     height: 50px;
     width: 50px;

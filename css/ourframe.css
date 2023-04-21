@@ -79,6 +79,7 @@
 .navbar .profile img{
     width: 100%;
     border-radius: 5px;
+    cursor: pointer;
 }
 .navbar ul {
     display: flex;
@@ -118,6 +119,10 @@
 }
 .navbar .profile ul li a::after{
     background-color: #000;
+}
+
+.navbar .profile ul li i {
+    margin-left: 5px;
 }
 
 .navbar ul li:hover a::after {
