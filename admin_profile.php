@@ -18,20 +18,21 @@
 <body>
     <div style="display: none;">
         <!-- <?php
-                include 'connection.php';
-                session_start();
-                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    $rows = countRows('listings') + 1;
-                    if (isset($_POST['car_name'])) {
-                        $car_name = $_POST['car_name'];
-                        $car_model = $_POST['model'];
-                        $car_caption = $_POST['caption'];
-                        if (isset($_FILES['img'])) {
-                            $file_name = $_FILES['img']['name'];
-                            $file_tmp = $_FILES['img']['tmp_name'];
-                            $file_type = $_FILES['img']['type'];
-                            $file_ext = strtolower(end(explode('.', $file_name)));
-                            $extensions = array("jpeg", "jpg", "png");
+        include 'connection.php';
+        session_start();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $rows = countRows('listings') + 1;
+            if (isset($_POST['car_name'])) {
+                $car_name = $_POST['car_name'];
+                $car_model = $_POST['model'];
+                $car_caption = $_POST['caption'];
+                $car_price = $_POST['price'];
+                if (isset($_FILES['img'])) {
+                    $file_name = $_FILES['img']['name'];
+                    $file_tmp = $_FILES['img']['tmp_name'];
+                    $file_type = $_FILES['img']['type'];
+                    $file_ext = strtolower(end(explode('.', $file_name)));
+                    $extensions = array("jpeg", "jpg", "png");
 
                             if (!in_array($file_ext, $extensions)) {
                                 array_push($err, 'Extension not allowed, please choose a JPEG, JPG, or PNG file');
@@ -63,8 +64,8 @@
                 </ul>
             </div>
             <div class="profile">
-                <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();">
-                <div class="drop-list">
+                <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();" style="cursor: pointer;">
+                <div class="drop-list" >
                     <ul id="drop-list">
                         <li><a href="user_profile.php">profile</a></li>
                         <li>
@@ -87,21 +88,31 @@
                 <div class="open-btn glass" id="open-btn">
                     <i class="fa-solid fa-caret-left" id="fa-caret-left"></i>
                 </div>
-
-
             </div>
             <?php
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                if (count($err) === 0) {
-                    $sql = "INSERT INTO listings (name,model,caption,img) VALUES ('$car_name', '$car_model', '$car_caption','$file_name')";
-                    if ($conn->query($sql)) {
-                        echo '<div class="alert alert-success" role="alert">Added successfully ! <i class="fa-solid fa-x"></i></div>';
-                    }
-                } else {
-                    foreach ($err as $one_err) {
-                        echo '<div class="alert alert-success" role="alert" id="alert-success">Added successfully !
-                              <i class="fa-solid fa-x" onclick="close_alert();"></i>
-                              </div>';
+
+            if(isset($_POST['add-car']))
+            {
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+            
+                {
+                    if (count($err) === 0) 
+                    {
+                        $sql = "INSERT INTO listings (name,model,caption,img,price) VALUES ('$car_name', '$car_model', '$car_caption','$file_name','$car_price')";
+                        if ($conn->query($sql))
+                        {
+                            echo '<div class="alert alert-success" role="alert">Added successfully ! <i class="fa-solid fa-x"></i></div>';
+                        }
+                    
+                    } 
+                    else 
+                    {
+                        foreach ($err as $one_err) 
+                            {
+                            echo '<div class="alert alert-success" role="alert" id="alert-success">Added successfully !
+                            <i class="fa-solid fa-x" onclick="close_alert();"></i>
+                            </div>';
+                            }
                     }
                 }
             }
@@ -114,8 +125,10 @@
                     <div class="car-info">
                         <label for="car_name">Car Name</label>
                         <input type="text" name="car_name" id="car_name">
-                        <label for="model">Car model</label>
+                        <label for="model">Car Model</label>
                         <input type="text" name="model" id="model">
+                        <label for="model">Car Price</label>
+                        <input type="text" name="price" id="price">
                         <textarea name="caption" placeholder="Car caption"></textarea>
                     </div>
                     <div>
@@ -123,16 +136,32 @@
                             <span class="drop-zone__prompt">Drop file here or click to upload</span>
                             <input type="file" name="img" class="drop-zone__input">
                         </div>
-                        <input type="submit" value="Add The Car" class="btn btn-primary btn-lg">
+                        <input type="submit" value="Add The Car" class="btn btn-primary btn-lg" name="add-car">
                     </div>
                 </form>
             </div>
             <h1>Delete car</h1>
             <div class="delete-car">
-                <form action="" method="post">
+                <form action="admin_profile.php" method="post">
                     <input type="text" name="car_num" class="car-num" placeholder="car number">
-                    <input type="submit" value="Delete car" class="btn btn-danger">
+                    <input type="submit" value="Delete car" class="btn btn-danger" name="delete-car">
                 </form>
+                <?php
+                    $connection=mysqli_connect("localhost","root","");
+                    $db=mysqli_select_db($connection,'users');
+                    if(isset($_POST['delete-car'])){
+                    $id=$_POST['car_num'];
+                    $query = "DELETE FROM listings WHERE car_num='$id'"; 
+                    $query_run = mysqli_query ($connection,$query);
+                if($query_run)
+                {
+                    echo '<div class="alert alert-success" role="alert">Deleted successfully ! <i class="fa-solid fa-x"></i></div>'; 
+                }
+                else{
+                    echo '<script type="text.javascript"> alert ("Data not deleted")</script>';
+                }
+                }
+                    ?>
             </div>
         </div>
         <script src="js/ourframe.js"></script>

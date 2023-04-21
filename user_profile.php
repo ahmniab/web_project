@@ -11,25 +11,25 @@ session_start();
 
 // print_r ($_SESSION);
 
-// echo "</pre>";
+    // Logout button logic
+    if(isset($_POST["logout"])){
 
-$username = $_SESSION['user_name'];
-$email = $_SESSION['email'];
-// $phone = $_SESSION ['phone'];
-$name = $_SESSION['name'];
-$profile = $_SESSION['profile'];
+        if(isset($_COOKIE["user_name"])){
 
-// Logout button logic
-if (isset($_POST["logout"])) {
+            setcookie("user_name","" , time() - 60 * 60 * 24 * 30);
 
-    $_SESSION = array();
+        }
 
+        $_SESSION = array();
+        session_destroy();
+        
+        header("location: index.php");
+        exit ();
+    }
+    elseif (isset($_POST["edit"])){
 
-    session_destroy();
-
-    header("location: index.php");
-    exit();
-}
+        header("location: edit_profile.php");
+    }
 ?>
 
 
@@ -64,7 +64,7 @@ if (isset($_POST["logout"])) {
                 <ul>
                     <li><a class="chosen">home</a></li>
                     <li><a href="listings.php">listing</a></li>
-                    <li><a href="contact.php">contact</a></li>
+                    <li><a href="contact.html">contact</a></li>
                     <li><a href="About.html">about us</a></li>
                 </ul>
             </div>
@@ -96,8 +96,8 @@ if (isset($_POST["logout"])) {
                         <input type="text" readonly value="phone">
                     </div>
                 </div>
-                <button>Edit Profile</button>
                 <form action="user_profile.php" method="post">
+                    <button type="submit" name="edit">Edit Profile</button>
                     <button type="submit" name="logout">Logout</button>
                 </form>
             </div>
