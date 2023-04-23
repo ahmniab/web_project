@@ -53,7 +53,7 @@ function close_alert() {
 function dropList() {
 	var droplist = document.getElementById("drop-list");
 
-	if (droplist.style.display=="none") {
+	if (droplist.style.display == "none") {
 		droplist.style.display = "flex";
 	}
 
@@ -62,7 +62,8 @@ function dropList() {
 
 	}
 }
-function logout() {
+function _logout() {
+	// var logout_btn = document.getElementById("logout-btn");
 	document.logout_btn.submit();
-	
+
 } 

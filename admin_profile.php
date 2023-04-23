@@ -18,21 +18,21 @@
 <body>
     <div style="display: none;">
         <!-- <?php
-        include 'connection.php';
-        session_start();
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $rows = countRows('listings') + 1;
-            if (isset($_POST['car_name'])) {
-                $car_name = $_POST['car_name'];
-                $car_model = $_POST['model'];
-                $car_caption = $_POST['caption'];
-                $car_price = $_POST['price'];
-                if (isset($_FILES['img'])) {
-                    $file_name = $_FILES['img']['name'];
-                    $file_tmp = $_FILES['img']['tmp_name'];
-                    $file_type = $_FILES['img']['type'];
-                    $file_ext = strtolower(end(explode('.', $file_name)));
-                    $extensions = array("jpeg", "jpg", "png");
+                include 'connection.php';
+                session_start();
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $rows = countRows('listings') + 1;
+                    if (isset($_POST['car_name'])) {
+                        $car_name = $_POST['car_name'];
+                        $car_model = $_POST['model'];
+                        $car_caption = $_POST['caption'];
+                        $car_price = $_POST['price'];
+                        if (isset($_FILES['img'])) {
+                            $file_name = $_FILES['img']['name'];
+                            $file_tmp = $_FILES['img']['tmp_name'];
+                            $file_type = $_FILES['img']['type'];
+                            $file_ext = strtolower(end(explode('.', $file_name)));
+                            $extensions = array("jpeg", "jpg", "png");
 
                             if (!in_array($file_ext, $extensions)) {
                                 array_push($err, 'Extension not allowed, please choose a JPEG, JPG, or PNG file');
@@ -65,12 +65,16 @@
             </div>
             <div class="profile">
                 <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();" style="cursor: pointer;">
-                <div class="drop-list" >
+                <div class="drop-list">
                     <ul id="drop-list">
                         <li><a href="user_profile.php">profile</a></li>
                         <li>
                             <a>
-                                <form action="" method="post" style="cursor: pointer;" name="logout_btn" onclick="logout();">logout<i class="fa-solid fa-right-from-bracket"></i></form>
+                                <form action="user_profile.php" method="post" style="cursor: pointer;" name="logout_btn" onclick="_logout();">
+                                    logout
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <input type="hidden" name="logout" value="1">
+                                </form>
                             </a>
                         </li>
                     </ul>
@@ -91,29 +95,31 @@
             </div>
             <?php
 
-            if(isset($_POST['add-car']))
-            {
-                if ($_SERVER['REQUEST_METHOD'] === 'POST') 
-            
-                {
-                    if (count($err) === 0) 
-                    {
+            if (isset($_POST['add-car'])) {
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    if (count($err) === 0) {
                         $sql = "INSERT INTO listings (name,model,caption,img,price) VALUES ('$car_name', '$car_model', '$car_caption','$file_name','$car_price')";
-                        if ($conn->query($sql))
-                        {
+                        if ($conn->query($sql)) {
                             echo '<div class="alert alert-success" role="alert">Added successfully ! <i class="fa-solid fa-x"></i></div>';
                         }
-                    
-                    } 
-                    else 
-                    {
-                        foreach ($err as $one_err) 
-                            {
+                    } else {
+                        foreach ($err as $one_err) {
                             echo '<div class="alert alert-success" role="alert" id="alert-success">Added successfully !
                             <i class="fa-solid fa-x" onclick="close_alert();"></i>
                             </div>';
-                            }
+                        }
                     }
+                }
+            }
+
+            if (isset($_POST['delete-car'])) {
+                $id = $_POST['car_num'];
+                $query = "DELETE FROM listings WHERE car_num='$id'";
+                $query_run = mysqli_query($conn, $query);
+                if ($query_run) {
+                    echo '<div class="alert alert-success" role="alert">Deleted successfully ! <i class="fa-solid fa-x"></i></div>';
+                } else {
+                    echo '<script type="text.javascript"> alert ("Data not deleted")</script>';
                 }
             }
             ?>
@@ -146,22 +152,6 @@
                     <input type="text" name="car_num" class="car-num" placeholder="car number">
                     <input type="submit" value="Delete car" class="btn btn-danger" name="delete-car">
                 </form>
-                <?php
-                    $connection=mysqli_connect("localhost","root","");
-                    $db=mysqli_select_db($connection,'users');
-                    if(isset($_POST['delete-car'])){
-                    $id=$_POST['car_num'];
-                    $query = "DELETE FROM listings WHERE car_num='$id'"; 
-                    $query_run = mysqli_query ($connection,$query);
-                if($query_run)
-                {
-                    echo '<div class="alert alert-success" role="alert">Deleted successfully ! <i class="fa-solid fa-x"></i></div>'; 
-                }
-                else{
-                    echo '<script type="text.javascript"> alert ("Data not deleted")</script>';
-                }
-                }
-                    ?>
             </div>
         </div>
         <script src="js/ourframe.js"></script>
