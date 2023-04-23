@@ -11,25 +11,23 @@ session_start();
 
 // print_r ($_SESSION);
 
-    // Logout button logic
-    if(isset($_POST["logout"])){
+// Logout button logic
+if (isset($_POST["logout"])) {
 
-        if(isset($_COOKIE["user_name"])){
+    if (isset($_COOKIE["user_name"])) {
 
-            setcookie("user_name","" , time() - 60 * 60 * 24 * 30);
-
-        }
-
-        $_SESSION = array();
-        session_destroy();
-        
-        header("location: index.php");
-        exit ();
+        setcookie("user_name", "", time() - 60 * 60 * 24 * 30);
     }
-    elseif (isset($_POST["edit"])){
 
-        header("location: edit_profile.php");
-    }
+    $_SESSION = array();
+    session_destroy();
+
+    header("location: index.php");
+    exit();
+} elseif (isset($_POST["edit"])) {
+
+    header("location: edit_profile.php");
+}
 ?>
 
 
@@ -44,38 +42,33 @@ session_start();
     <title>Profile Page</title>
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/ourframe.css">
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 
 <body>
 
     <script src="js/ourframe.js"></script>
-    <div class="drop-zone glass" id="drop-zone" style="display: none;">
-        <form name="img" action="index.html">
-            <i class="fa-solid fa-cloud-arrow-up"></i>
-            <span class="drop-zone__prompt">Drop file here or click to upload</span>
-            <input type="file" name="userimg" class="drop-zone__input">
-        </form>
-    </div>
+    <nav class="navbar">
+        <div>
+            <ul>
+                <li><a class="chosen">home</a></li>
+                <li><a href="listings.php">listing</a></li>
+                <li><a href="contact.html">contact</a></li>
+                <li><a href="About.html">about us</a></li>
+            </ul>
+        </div>
+        <!-- <a class="button"><button type="button" class="btn btn-outline-light"><i class="fa-solid fa-people-group"></i>Our Team</button></a> -->
+    </nav>
+
     <div class="parent">
-        <nav class="navbar">
-            <div>
-                <ul>
-                    <li><a class="chosen">home</a></li>
-                    <li><a href="listings.php">listing</a></li>
-                    <li><a href="contact.html">contact</a></li>
-                    <li><a href="About.html">about us</a></li>
-                </ul>
-            </div>
-            <!-- <a class="button"><button type="button" class="btn btn-outline-light"><i class="fa-solid fa-people-group"></i>Our Team</button></a> -->
-        </nav>
 
         <div class="container">
             <div id="loading">
                 <div class="spinner"></div>
             </div>
-            <div class="info-box glass">
+            <div class="info-box">
                 <div class="photo-box">
                     <img src="img/blank-profile.png">
                     <div class="glass" onclick="toggleVisibility()"><i class="fa-regular fa-pen-to-square"></i></div>
@@ -97,8 +90,8 @@ session_start();
                     </div>
                 </div>
                 <form action="user_profile.php" method="post">
-                    <button type="submit" name="edit">Edit Profile</button>
-                    <button type="submit" name="logout">Logout</button>
+                    <button type="submit" class="btn btn-primary" name="edit">Edit Profile</button>
+                    <button type="submit" class="btn btn-secondary" name="logout">Logout</button>
                 </form>
             </div>
         </div>

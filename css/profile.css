@@ -1,19 +1,22 @@
 body {
-	background-image: url("../img/bmw2.jpg");
-	background-size: cover;
-	background-position: center;
-	font-family: Arial, Helvetica, sans-serif;
-	color: white;
+	font-family: 'Trebuchet MS', Arial;
+	background-color: #212529;
+	color: #fff;
+}
+
+.navbar {
+	background-color: #1e2125 !important;
+	box-shadow: 0 0 0 !important;
 }
 
 .parent {
-	background-color: rgba(0, 0, 0, 0.468);
+	/* background-color: rgba(0, 0, 0, 0.468); */
 	min-height: 100vh;
 }
 
 .container {
 	display: flex;
-	height: 85vh;
+	min-height: 85vh;
 	align-items: center;
 	justify-content: center;
 }
@@ -28,13 +31,14 @@ body {
 }
 
 .photo-box img {
-	width: 200px;
-	height: 200px;
+	width: 150px;
+	height: 150px;
 	border-radius: 50%;
 	object-fit: cover;
 	cursor: grab;
 }
-.photo-box img:hover + div{
+
+.photo-box img:hover+div {
 	visibility: visible;
 
 
@@ -52,7 +56,7 @@ body {
 	font-size: 30px;
 	position: absolute;
 	right: 102px;
-    bottom: 85px;
+	bottom: 85px;
 	border: rgb(32, 32, 32) solid 2px;
 	width: 40px;
 	height: 40px;
@@ -61,15 +65,18 @@ body {
 .photo-box h2 {
 	margin-top: 10px;
 	margin-bottom: 20px;
-	font-size: 35px;
+	font-size: 25px;
 	/* color: black; */
 	/* text-shadow: 1px 1px 3px black; */
 }
 
 .info-box {
 	padding: 50px;
-	width: 400px;
-
+	width: 450px;
+	background-color: #1b1f22;
+	border-radius: 10px;
+	margin: 20px 0;
+	padding-top: 50px;
 }
 
 .info-box .edite {
@@ -82,7 +89,7 @@ body {
 .info-box h3 {
 	text-align: center;
 	margin-top: 0;
-	font-size: 20px;
+	font-size: 15px;
 	/* color: black; */
 
 }
@@ -91,13 +98,12 @@ body {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	font-size: 20px;
 }
 
 .info-box li {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	/* color: black; */
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: 300;
 
 }
@@ -108,7 +114,7 @@ body {
 	font-weight: bold;
 }
 
-.info-box button {
+/* .info-box button {
 	display: block;
 	margin-top: 30px;
 	margin-right: auto;
@@ -120,11 +126,11 @@ body {
 	font-size: 16px;
 	cursor: pointer;
 	transition: background-color 0.3s;
-}
+} */
 
-.info-box button:hover {
+/* .info-box button:hover {
 	background-color: rgb(17, 17, 17);
-}
+} */
 
 input {
 	background-color: transparent;
