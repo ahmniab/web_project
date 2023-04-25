@@ -100,14 +100,13 @@
                     if (count($err) === 0) {
                         $sql = "INSERT INTO listings (name,model,caption,img,price) VALUES ('$car_name', '$car_model', '$car_caption','$file_name','$car_price')";
                         if ($conn->query($sql)) {
-                            echo '<div class="alert alert-success" role="alert">Added successfully ! <i class="fa-solid fa-x"></i></div>';
+                            echo '<div class="alert alert-success" role="alert">Added successfully ! <i class="fa-solid fa-x" onclick="close_alert();"></i></div>';
                         }
                     } else {
-                        foreach ($err as $one_err) {
-                            echo '<div class="alert alert-success" role="alert" id="alert-success">Added successfully !
+
+                        echo '<div class="alert alert-danger" role="alert" id="alert-success" onclick="close_alert();">'.$err[1].'
                             <i class="fa-solid fa-x" onclick="close_alert();"></i>
                             </div>';
-                        }
                     }
                 }
             }
@@ -117,9 +116,9 @@
                 $query = "DELETE FROM listings WHERE car_num='$id'";
                 $query_run = mysqli_query($conn, $query);
                 if ($query_run) {
-                    echo '<div class="alert alert-success" role="alert">Deleted successfully ! <i class="fa-solid fa-x"></i></div>';
+                    echo '<div class="alert alert-success" role="alert" id="alert-success">Deleted successfully ! <i class="fa-solid fa-x" onclick="close_alert();"></i></div>';
                 } else {
-                    echo '<script type="text.javascript"> alert ("Data not deleted")</script>';
+                    echo '<div class="alert alert-warning" role="alert" id="alert-success">Data not deleted ! <i class="fa-solid fa-x" onclick="close_alert();"></i></div>';
                 }
             }
             ?>

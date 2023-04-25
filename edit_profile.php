@@ -115,6 +115,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				<li><a href="About.html">about us</a></li>
 			</ul>
 		</div>
+		<div class="profile">
+                <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();" style="cursor: pointer;">
+                <div class="drop-list">
+                    <ul id="drop-list">
+                        <li><a href="user_profile.php">back to profile</a></li>
+                        <li>
+                            <a>
+                                <form action="user_profile.php" method="post" style="cursor: pointer;" name="logout_btn" onclick="_logout();">
+                                    logout
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <input type="hidden" name="logout" value="1">
+                                </form>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 	</nav>
 	<div class="container">
 		<div id="loading">

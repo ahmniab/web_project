@@ -12,8 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userNameInfo->execute();
     $userNameResult = $userNameInfo->get_result();
     $row = $userNameResult->fetch_assoc();
-    // print_r($row) ;
-    // var_dump(empty($row['user_name']));
+
 
     if (!empty($row['user_name'])) {
         $wrongMsg = 'User name already exists';
@@ -82,29 +81,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </html>
   
-<?php
-    // include 'connection.php';
-    
- 
-
-    // $user_name = $_POST['user_name'];
-    // $email = $_POST['email'];
-    // $password = $_POST['password'];
-    // $name = $_POST['name'];
-
-
-
-    // $sql = "INSERT INTO users (user_name, email, password,profile,name)
-    // VALUES ('$user_name', '$email', '$password','blank-profile.png','$name')";
-
-
-    // if ($conn->query($sql) === TRUE) {
-    // echo "Regisetred Successfully";
-    // } else {  
-    // echo "Error: " . $sql . "<br>" . $conn->error;
-    // }
-
-$conn->close(); 
-     
-?>
 

@@ -1,8 +1,8 @@
 <?php
-    require_once 'connection.php';
+require_once 'connection.php';
 
-    $sql = "SELECT * FROM listings";
-    $select_prods = $conn->query($sql);
+$sql = "SELECT * FROM listings";
+$select_prods = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +39,31 @@
                     <li><a href="About.html">about us</a></li>
                 </ul>
             </div>
+            <?php
+            session_start();
+            if (isset($_SESSION['user_name'])) {
+            ?>
+                <div class="profile">
+                    <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();" style="cursor: pointer;">
+                    <div class="drop-list">
+                        <ul id="drop-list">
+                            <li><a href="user_profile.php">profile</a></li>
+                            <li>
+                                <a>
+                                    <form action="user_profile.php" method="post" style="cursor: pointer;" name="logout_btn" onclick="_logout();">
+                                        logout
+                                        <i class="fa-solid fa-right-from-bracket"></i>
+                                        <input type="hidden" name="logout" value="1">
+                                    </form>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            <?php
+            }
+            ?>
         </nav>
         <nav class="nav-btn" id="nav-btn">
             <ul class="first">
@@ -59,19 +84,19 @@
         </nav>
 
         <?php
-            $search_term = '';
+        $search_term = '';
 
-            if (isset($_POST['searchButton'])) {
-                $search_term = mysqli_real_escape_string($conn, $_POST['Search']);
+        if (isset($_POST['searchButton'])) {
+            $search_term = mysqli_real_escape_string($conn, $_POST['Search']);
 
-                if ($searchTerm = '') {
-                    $newsql = "SELECT * FROM listings";
-                    $select_prods = $conn->query($newsql);
-                } else {
-                    $newsql = "SELECT * FROM listings WHERE name LIKE '%$search_term%'";
-                    $select_prods = $conn->query($newsql);
-                }
+            if ($searchTerm = '') {
+                $newsql = "SELECT * FROM listings";
+                $select_prods = $conn->query($newsql);
+            } else {
+                $newsql = "SELECT * FROM listings WHERE name LIKE '%$search_term%'";
+                $select_prods = $conn->query($newsql);
             }
+        }
         ?>
 
         <div class="search_bar_container">
@@ -93,7 +118,10 @@
                         <p class="product_name"><?php echo $row["name"] ?></p>
                         <p class="price"><?php echo $row["price"] ?>$</p>
                     </div>
-                    <button class="inspect">Inspect</button>
+                    <form action="showcar.php" method="post">
+                        <input type="hidden" name="car_num" value="<?php echo $row['car_num'] ?>">
+                        <button class="inspect" type="submit">Inspect</button>
+                    </form>
                 </div>
             <?php
             }

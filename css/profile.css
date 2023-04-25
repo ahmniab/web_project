@@ -8,7 +8,9 @@ body {
 	background-color: #1e2125 !important;
 	box-shadow: 0 0 0 !important;
 }
-
+.navbar .profile ul {
+	height: 100px;
+}
 .parent {
 	/* background-color: rgba(0, 0, 0, 0.468); */
 	min-height: 100vh;
