@@ -24,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: index.php');
             exit;
         }
-
     }
 }
 
@@ -37,10 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>sign up</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/ourframe.css">
+    <link rel="stylesheet" href="css/signup.css">
     <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
 
 </head>
@@ -50,7 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="spinner"></div>
     </div>
     <div class="parent">
-        <div class="box glass">
+        <div class="box">
+            <div class="back-home">
+                <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
             <h2>Sign up</h2>
             <?php
             if (isset($wrongMsg)) {
@@ -80,5 +82,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 </html>
-  
-

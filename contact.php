@@ -28,7 +28,7 @@
         <li><a href="index.php">home</a></li>
         <li><a href="listings.php">listing</a></li>
         <li><a class="chosen">contact</a></li>
-        <li><a href="About.html">about us</a></li>
+        <li><a href="About.php">about us</a></li>
       </ul>
     </div>
   </nav>

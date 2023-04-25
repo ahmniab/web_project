@@ -79,12 +79,10 @@ if (isset($_SESSION['admin'])) {
     <div class="parent">
 
         <form action="signin.php" method="post">
-            <div class="box glass">
+            <div class="box">
 
-                <div class="back-home glass">
-                    <div><i class="fa-solid fa-house"></i>
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
+                <div class="back-home">
+                <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
                 </div>
                 <h2>Sign in</h2>
                 <?php

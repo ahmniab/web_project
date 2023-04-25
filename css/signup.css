@@ -5,20 +5,24 @@
     box-sizing: border-box;
 }
 
-::selection {
-    background-color: #2a2c29;
-}
+/* ::selection {
+    background-color: #2b2a57;
+} */
 
 body {
-    background-image: url("../img/signin.jpg");
+    /* background-image: url("../img/signin.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center; */
+    background-color: #212529;
+    font-family: 'Trebuchet MS', Arial;
+    font-size: 20px;
+    color: white;
 }
 
 .parent {
-    background-color: rgba(0, 0, 0, 0.645);
+    /* background-color: rgba(0, 0, 0, 0.645); */
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
@@ -36,28 +40,36 @@ form {
 }
 
 .box {
-    width: 30%;
+    width: 450px;
     min-height: 700px;
-    border-radius: 15px;
-    box-shadow: 0px 1px 20px;
+    border-radius: 10px;
+    background-color: #1b1f22;
+    /* box-shadow: 0px 1px 20px; */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-content: center;
     align-items: center;
+    position: relative;
+}
+
+.back-home {
+    position: absolute;
+    top: 38px;
+    left: -103px;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 35px;
     margin-bottom: 30px;
     color: white;
-    font-family: serif;
     padding-top: 10px;
 }
 
 input:focus {
     background-color: #55463800;
+    color: #fff;
     transition-duration: 0.7s;
 }
 
@@ -66,7 +78,7 @@ input:focus {
 .n,
 .pass,
 .cpass {
-    color: #fff3ea;
+    /* color: #fff3ea;
     font-size: 23px;
     margin-bottom: 20px;
     width: 300px;
@@ -76,14 +88,21 @@ input:focus {
     border-style: solid;
     border-color: #979797;
     cursor: auto;
-    padding-left: 20px;
-
+    padding-left: 20px; */
+    margin-bottom: 30px;
+    border: 1px #ccc solid;
+    border-radius: 10px;
+    height: 40px;
+    width: 250px;
+    padding: 5px;
+    padding-left: 10px;
+    /* color: #fff; */
 }
 
 .sign-up {
     font-size: 30px;
-    font-family: serif;
-    font-weight: 900;
+    /* font-family: serif; */
+    /* font-weight: 900; */
     background-color: #3f5166;
     width: 150px;
     height: 60px;
@@ -98,10 +117,12 @@ input:focus {
     background-color: #516883;
     transition-duration: 0.5s;
 }
-
+p{
+    margin-bottom: 0;
+}
 .signin {
     margin-top: 20px;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     font-weight: 100;
     text-align: center;

@@ -5,11 +5,11 @@
   <title> ABOUT US </title>
   <meta name="description" content="This is all about us" />
   <!-- css -->
-  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/ourframe.css">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/about.css">
 
 
 </head>
@@ -18,16 +18,64 @@
   <div id="loading">
     <div class="spinner"></div>
   </div>
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div>
       <ul>
         <li><a href="index.php">home</a></li>
-        <li><a href="listings.php">listing</a></li>
-        <li><a href="contact.html">contact</a></li>
+        <li><a href="listings.php">listings</a></li>
+        <li><a href="contact.php">contact</a></li>
+        <li><a class="chosen">about us</a></li>
+      </ul>
+    </div>
+    <?php
+    session_start();
+    if (isset($_SESSION['user_name'])) {
+    ?>
+      <div class="profile">
+        <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();" style="cursor: pointer;">
+        <div class="drop-list">
+          <ul id="drop-list">
+            <li><a href="user_profile.php">profile</a></li>
+            <li>
+              <a>
+                <form action="user_profile.php" method="post" style="cursor: pointer;" name="logout_btn" onclick="_logout();">
+                  logout
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  <input type="hidden" name="logout" value="1">
+                </form>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    <?php
+    }
+    ?>
+  </nav>
+  <nav class="nav-btn" id="nav-btn">
+    <ul class="first">
+      <li><a><i class="fa-solid fa-house"></i></a></li>
+      <li><a><i class="fa-solid fa-car"></i></a></li>
+      <li><a><i class="fa-solid fa-headset"></i></a></li>
+      <li><a><i class="fa-solid fa-people-group"></i></a></li>
+
+    </ul>
+    <div>
+      <ul>
+        <li><a href="index.php">home</a></li>
+        <li><a href="listings.php">listings</a></li>
+        <li><a href="contact.php">contact</a></li>
         <li><a class="chosen">about us</a></li>
       </ul>
     </div>
   </nav>
+
+  <span id="up-btn" onclick="scrollToTop();">
+    <i class="fa-solid fa-angles-up"></i>
+  </span>
+
+
   <div class="container">
     <h1 style="margin: 20px 0 50px;">ABOUT US</h1>
     <p>
@@ -132,19 +180,20 @@
     <h2> Connect With US :</h2>
     <div>
       <i class="fa-brands fa-facebook-f"></i>
-    <i class="fa-brands fa-twitter"></i>
-    <i class="fa-brands fa-discord"></i>
-    <i class="fa-brands fa-github"></i>
-    <i class="fa-brands fa-linkedin"></i>
-    <i class="fa-solid fa-envelope"></i>
-    
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-discord"></i>
+      <i class="fa-brands fa-github"></i>
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-solid fa-envelope"></i>
+
     </div>
     <a href="us.html" target="_blank"><button type="button" class="btn btn-outline-warning btn-lg"><i class="fa-solid fa-people-group">
-    </i>Our Team</button></a>
+        </i>Our Team</button></a>
   </footer>
 
   </div>
   <script src="js/ourframe.js"></script>
+  <script src="js/listngs.js"></script>
 
 
 </body>

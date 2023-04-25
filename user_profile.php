@@ -55,8 +55,8 @@ if (isset($_POST["logout"])) {
             <ul>
                 <li><a class="chosen">home</a></li>
                 <li><a href="listings.php">listing</a></li>
-                <li><a href="contact.html">contact</a></li>
-                <li><a href="About.html">about us</a></li>
+                <li><a href="contact.php">contact</a></li>
+                <li><a href="About.php">about us</a></li>
             </ul>
         </div>
         <div class="profile">

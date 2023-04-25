@@ -222,4 +222,138 @@
     transform: translateX(-70px);
 }
 
+.nav-btn {
+    color: white;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    font-size: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+    z-index: 4;
+    font-family: Arial, Helvetica, sans-serif;
+    width: fit-content;
+    transform: translateX(100%);
+    transition-duration: 0.5s;
+}
 
+.nav-btn ul.first {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-top: 0;
+    padding: 0;
+    background-color: #2f3454;
+    height: 100vh;
+    width: 70px;
+    /* margin-right: 10px; */
+    z-index: 5;
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+}
+
+.nav-btn:hover .first {
+    width: 100px;
+    transition-delay: 0.5s;
+
+}
+
+.nav-btn ul li {
+    margin: 20px 0;
+}
+
+.nav-btn ul li:nth-child(1) {
+    margin-top: 50px;
+}
+
+.nav-btn div {
+    background-color: #1e2236;
+    width: 270px;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    right: 70px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 4;
+    transform: translateX(100%);
+    transition-duration: 0.5s;
+}
+
+.nav-btn:hover div {
+    transform: translateX(0);
+    transition-delay: 1s;
+
+
+}
+
+.nav-btn div ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-btn:hover div ul li:hover {
+    color: aquamarine;
+}
+
+.nav-btn div ul li {}
+
+.nav-btn div ul li {
+    margin: 30px 0;
+    position: relative;
+}
+
+.nav-btn div ul li a::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+    transform: rotateY(90deg);
+}
+
+.nav-btn div ul li:hover a::after {
+    transform: rotateY(0deg);
+    transition-duration: 0.5s;
+}
+
+.nav-btn ul li a.chosen::after {
+    content: "";
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    transform: rotateY(0deg);
+    bottom: -5px;
+    left: 0;
+}
+
+#up-btn {
+    background-color: #2f3454;
+    color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 59px;
+    right: 108px;
+    z-index: 2;
+    transform: translateX(400%);
+}
