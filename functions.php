@@ -1,28 +1,43 @@
-<?php 
+<?php
+function getRowCount($tableName) {
 
+    include 'connection.php';
 
-    function countRows($table_name)
-    {
-
-    $sql = "SELECT COUNT(*) as count FROM $table_name";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) > 0)
-    {
-        $row = mysqli_fetch_assoc($result);
-        $count = $row["count"];
-    } 
-
-    else {
-    $count = 0;
+    $sql = "SELECT COUNT() AS row_count FROM " . $tableName;
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $rowCount = $row["row_count"];
+        return $rowCount;
+    } else {
+        return 0;
     }
+    $conn->close();
+}
 
-    mysqli_close($conn);
-    return $count;
-    } 
+function isImageNameExists($imageName)
+{
 
-    $table_name = "users";
-    $row_count = countRows($table_name);
-    echo "Number of rows in $table_name table: " . $row_count;
+    include 'connection.php';
+    $sql = "SELECT FROM  table_name WHERE image_name = '" . $imageName . "'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        return true;
+    } else {
+        return false;
+    }
+    $conn->close();
+}
+ 
+$tableName = "table_name";
+$rowCount = getRowCount($tableName);
+echo "Number of rows in " . $tableName . ": " . $rowCount . "<br>";
 
-
+$imageName = "image_name";
+$isExists = isImageNameExists($imageName);
+if ($isExists) {
+    echo "Image name " . $imageName . " already exists in the table";
+} else {
+    echo "Image name " . $imageName . " does not exist in the table";
+}
+?>
