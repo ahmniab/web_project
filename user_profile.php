@@ -90,7 +90,7 @@ if (isset($_POST["logout"])) {
                     <h2><?php echo $_SESSION['name']; ?></h2>
                 </div>
                 <h3>Profile Information</h3>
-                <div class="edite">
+                <div class="edit">
                     <ul>
                         <li>Username:</li>
                         <li>Name:</li>

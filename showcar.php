@@ -1,3 +1,12 @@
+<?php
+require_once 'connection.php';
+if (isset($_POST['car_num'])){
+$car_number=$_POST['car_num'];
+$sql = "SELECT * FROM listings where car_num = ".$car_number;
+$select_prods = $conn->query($sql);
+$row = mysqli_fetch_assoc($select_prods);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +26,7 @@
     <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
 
 
-    <title>cars</title>
+    <title>Inspect</title>
 </head>
 
 <body>
@@ -30,33 +39,36 @@
             <a href="listings.php">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <h1 style="margin-right: auto; color: whitesmoke; padding-right: 80px;">CAR NAME BRUH</h1>
+            <h1 style="margin-right: auto; color: whitesmoke; padding-right: 80px;"><?php echo $row['name']; ?></h1>
         </div>
-        <h3> car model</h3>
+        <h3> model : <?php echo $row['model'];?></h3>
 
         <div class="container">
             <div class="car_pic_holder">
-                <div>
-                    <img src="img/Gclass.jpg">
+                
+            <?php
+            
+            {
+            ?>
+            <div style="min-height:200px">
+                    <img src="<?php echo $row["img"] ?>" alt="IMAGE" style="object-fit: contain;">
                 </div>
-                <h3>100,000$</h3>
-
-
+                <?php
+            }
+            ?> 
+                <h3><?php echo $row['price'];?> $</h3>
             </div>
             <p>
-                CAR DESCRIPTION, a very long and important description of all the attributes and quialities of the
-                car, just a placeholder for now maybe i will remove it later since there is no real reason for this
-                to exist. After all, this is not a real website nor will the TA give us extra marks for a very well
-                designed front-end for the website.
+                <?php echo $row['caption'];?>
             </p>
             <!-- <div class="buycar">
             <h2>100,000$</h2>
             <button>Finance This Car</button>
         </div> -->
         </div>
-        <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <!-- <div style="display: flex; justify-content: center; margin-top: 20px;">
             <button class="btn btn-danger">Delete This Car</button>
-        </div>
+        </div> -->
     </div>
 
     <script src="js/ourframe.js"></script>

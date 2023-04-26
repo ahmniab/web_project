@@ -81,7 +81,7 @@ body {
 	padding-top: 50px;
 }
 
-.info-box .edite {
+.info-box .edit {
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -91,19 +91,20 @@ body {
 .info-box h3 {
 	text-align: center;
 	margin-top: 0;
-	font-size: 15px;
+	font-size: 20px;
 	/* color: black; */
 
 }
 
 .info-box ul {
+	display: block;
 	list-style: none;
-	margin: 0;
-	padding: 0;
+	margin: 10px;
+	padding: 10px;
 }
 
 .info-box li {
-	margin-bottom: 15px;
+	margin: 10px;
 	/* color: black; */
 	font-size: 25px;
 	font-weight: 300;
@@ -112,7 +113,7 @@ body {
 
 .info-box li strong {
 	display: inline-block;
-	width: 100px;
+	width: 150px;
 	font-weight: bold;
 }
 
@@ -134,12 +135,23 @@ body {
 	background-color: rgb(17, 17, 17);
 } */
 
+.info{
+padding: 10px;
+margin: 10px;
+}
+
+
 input {
 	background-color: transparent;
-	border: 0 none;
+	border: solid ;
+	border-radius: 12px;
+	border-color: #fff;
+	border-width: 1px;
 	height: 30px;
-	margin: 6px 0;
-	font-size: 20px;
+	font-size: 18px;
 	color: white;
-	width: 150px
+	width: 200px;
+	padding: 10px;
+	margin: 10px;
+	height: 29px;
 }
