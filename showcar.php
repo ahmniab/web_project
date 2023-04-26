@@ -7,11 +7,11 @@ $select_prods = $conn->query($sql);
 $row = mysqli_fetch_assoc($select_prods);
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include "connection.php";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     addOneView($_POST['car_num'] , $conn);
 }

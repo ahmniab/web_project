@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
+<?php 
+include 'connection.php';
 
+session_start();
+ ?>
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,9 +49,7 @@
 
 <?php
 
-include 'connection.php';
 
-session_start();
 
 // echo "<pre>";
 // print_r($_SESSION);

@@ -42,6 +42,7 @@ function addOneView($car_num , $conn)
 }
 }
 
+
 // echo countRows('listings') ;
 
 // function save_file($file_path)
