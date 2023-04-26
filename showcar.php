@@ -1,5 +1,14 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include "connection.php";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    addOneView($_POST['car_num'] , $conn);
+}
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -25,8 +34,7 @@
         <div class="spinner"></div>
     </div>
     <div class="parent">
-        <div
-            style="display:flex; background-color: #1e2125 ; margin-top: 0; margin-bottom: 20px; justify-content: center;">
+        <div style="display:flex; background-color: #1e2125 ; margin-top: 0; margin-bottom: 20px; justify-content: center;">
             <a href="listings.php">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
