@@ -1,3 +1,10 @@
+<?php
+include 'connection.php';
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+  $sql="INSERT INTO feedback VALUES
+('$_POST[name]','$_POST[phone]','$_POST[email]','$_POST[subject]','$_POST[massage]')";
+$conn->query($sql);
+}
 <!DOCTYPE html>
 <html lang="en">
 
