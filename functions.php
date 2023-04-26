@@ -1,43 +1,22 @@
 <?php
-function getRowCount($tableName) {
 
-    include 'connection.php';
-
-    $sql = "SELECT COUNT() AS row_count FROM " . $tableName;
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $rowCount = $row["row_count"];
-        return $rowCount;
-    } else {
-        return 0;
-    }
-    $conn->close();
-}
-
-function isImageNameExists($imageName)
+function imgName($file_ext)
 {
-
-    include 'connection.php';
-    $sql = "SELECT FROM  table_name WHERE image_name = '" . $imageName . "'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        return true;
-    } else {
-        return false;
-    }
-    $conn->close();
+    $conn = $GLOBALS['conn'];
+    $sql ="SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'users' AND TABLE_NAME = 'listings';";
+    $res = $conn->query($sql);
+    $auto_inc = mysqli_fetch_assoc($res)['AUTO_INCREMENT'];
+    return $auto_inc .".".$file_ext; 
 }
- 
-$tableName = "table_name";
-$rowCount = getRowCount($tableName);
-echo "Number of rows in " . $tableName . ": " . $rowCount . "<br>";
-
-$imageName = "image_name";
-$isExists = isImageNameExists($imageName);
-if ($isExists) {
-    echo "Image name " . $imageName . " already exists in the table";
-} else {
-    echo "Image name " . $imageName . " does not exist in the table";
+function addOneView($car_num , $conn)
+{
+  if (isset($car_num)) {
+    $sql = 'select * from listings where car_num = '.$car_num ;
+    $row = mysqli_fetch_assoc($conn->query($sql)) ;
+    $viewsNum = $row['views'] + 1 ;
+    $sql = "UPDATE listings SET views = $viewsNum WHERE car_num = ".$car_num;
+    $conn->query($sql);
 }
-?>
+}
+
+

@@ -19,9 +19,9 @@
     <div style="display: none;">
         <!-- <?php
                 include 'connection.php';
+                include 'functions.php';
                 session_start();
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    $rows = countRows('listings') + 1;
                     if (isset($_POST['car_name'])) {
                         $car_name = $_POST['car_name'];
                         $car_model = $_POST['model'];
@@ -37,7 +37,7 @@
                             if (!in_array($file_ext, $extensions)) {
                                 array_push($err, 'Extension not allowed, please choose a JPEG, JPG, or PNG file');
                             }
-                            $upload_path = 'carimgs/' . $rows . '.' . $file_ext;
+                            $upload_path = 'carimgs/' . imgName($file_ext);
                             if (!move_uploaded_file($file_tmp, $upload_path)) {
                                 array_push($err, 'Error in uploading file');
                             } else {
