@@ -1,9 +1,9 @@
 <?php
 include 'connection.php';
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-  $sql="INSERT INTO feedback VALUES
-('$_POST[name]','$_POST[phone]','$_POST[email]','$_POST[subject]','$_POST[massage]')";
-$conn->query($sql);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $sql = "INSERT INTO feedback VALUES
+  ('" . $_POST['name'] . "','" . $_POST['phone'] . "','" . $_POST['email'] . "','" . $_POST['subject'] . "','" . $_POST['massage'] . "')";
+  $conn->query($sql);
 }
 ?>
 <!DOCTYPE html>
@@ -48,18 +48,18 @@ $conn->query($sql);
     <div class="contact-box glass">
 
       <h3>Send your request</h3>
-      <form>
+      <form method="post" action="">
 
         <div class="content">
           <div class="group">
-            <input type="text" placeholder="Name" required>
-            <input type="text" placeholder="Phone" required>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="phone" placeholder="Phone" required>
           </div>
           <div class="group">
-            <input type="email  " placeholder="email" required>
-            <input type="text  " placeholder="subject" required>
+            <input type="email" name="email" placeholder="email" required>
+            <input type="text" name="subject" placeholder="subject" required>
           </div>
-          <textarea rows="5" placeholder="Your Massage"></textarea>
+          <textarea rows="5" name="massage" placeholder="Your Massage"></textarea>
         </div>
         <div><input type="submit" value="Send" class="submit"></div>
       </form>
