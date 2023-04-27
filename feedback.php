@@ -1,6 +1,6 @@
 <?php
 require_once 'connection.php';
-
+session_start();
 $sql = "SELECT * FROM feedback";
 $select_prods = $conn->query($sql);
 ?>
@@ -33,6 +33,23 @@ $select_prods = $conn->query($sql);
                 <li><a href="About.php">about us</a></li>
             </ul>
         </div>
+        <div class="profile">
+            <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();" style="cursor: pointer;border-radius: 50%;">
+            <div class="drop-list">
+                <ul id="drop-list">
+                    <li><a href="user_profile.php">profile</a></li>
+                    <li>
+                        <a>
+                            <form action="user_profile.php" method="post" style="cursor: pointer;" name="logout_btn" onclick="_logout();">
+                                logout
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <input type="hidden" name="logout" value="1">
+                            </form>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
     <nav class="nav-btn" id="nav-btn">
         <ul class="first">
@@ -56,21 +73,21 @@ $select_prods = $conn->query($sql);
     </span>
     <h2>Feedback</h2>
     <div class="container">
-    <?php
-            while ($row = mysqli_fetch_assoc($select_prods)) {
-            ?>
-                <div class="box">
-                <h4>Name : <?php echo $row ["name"] ?></h4>
-            <h4>Email : <?php echo $row ["email"] ?></h4>
-            <h4>Phone : <?php echo $row ["phone"] ?></h4>
-            <h4>subject : <?php echo $row ["subject"] ?></h4>
-            <p>
-            <?php echo $row ["massege"] ?>
-            </p>
-                </div>
-            <?php
-            }
-            ?>
+        <?php
+        while ($row = mysqli_fetch_assoc($select_prods)) {
+        ?>
+            <div class="box">
+                <h4>Name : <?php echo $row["name"] ?></h4>
+                <h4>Email : <?php echo $row["email"] ?></h4>
+                <h4>Phone : <?php echo $row["phone"] ?></h4>
+                <h4>subject : <?php echo $row["subject"] ?></h4>
+                <p>
+                    <?php echo $row["massege"] ?>
+                </p>
+            </div>
+        <?php
+        }
+        ?>
     </div>
 
 </body>
