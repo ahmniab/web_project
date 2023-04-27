@@ -85,12 +85,13 @@
                 </div>
             </div>
         </nav>
+
         <div class="container">
             <div class="info-box glass right" id="info-box-right" onclick="open_right();">
-                <h1>feed back page will appear here using iframe 👌😉</h1>
-                <h4>==> Ahmed Nabil</h4>
+            <h2 style="text-align: center; margin:10px ;">Feedback</h2>
+                <iframe src="feedback.php" frameborder="0"></iframe>
 
-                <div class="open-btn glass" id="open-btn">
+                <div class="open-btn " id="open-btn">
                     <i class="fa-solid fa-caret-left" id="fa-caret-left"></i>
                 </div>
             </div>

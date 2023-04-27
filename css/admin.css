@@ -12,7 +12,8 @@ body {
 	background-color: #212529;
 	color: #fff;
 }
-.profile.img-profile{
+
+.profile.img-profile {
 	cursor: pointer;
 }
 
@@ -59,23 +60,27 @@ body {
 	/* transition: 0.5s; */
 	min-height: 88vh;
 }
-h1{
+
+h1 {
 	text-align: center;
 	margin: 50px 0;
 }
-.add-car{
+
+.add-car {
 	width: 995px;
 	margin: 0 auto;
 	height: 600px;
 	background-color: #1b1f22;
 	border-radius: 10px;
-	
+
 }
-input:focus{
+
+input:focus {
 	border: #eeecec;
 	outline: #ccc;
 }
-.add-car form{
+
+.add-car form {
 	inset: 3px;
 	display: flex;
 	flex-direction: row-reverse;
@@ -84,7 +89,8 @@ input:focus{
 	align-content: center;
 	padding: 20px;
 }
-.add-car .car-info{
+
+.add-car .car-info {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -92,7 +98,8 @@ input:focus{
 	height: 500px;
 	gap: 5px;
 }
-.add-car input{
+
+.add-car input {
 	/* background-color: ; */
 	border: 1px #ccc solid;
 	border-radius: 10px;
@@ -100,21 +107,25 @@ input:focus{
 	width: 250px;
 	padding: 5px;
 	padding-left: 10px;
-	
+
 }
-.add-car form div:last-child{
+
+.add-car form div:last-child {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
-.drop-zone{
+
+.drop-zone {
 	margin-top: 60px;
 }
-.add-car input.btn{
+
+.add-car input.btn {
 	border: 0;
 	margin: 100px auto 0;
 
 }
+
 .add-car textarea {
 	font-family: inherit;
 	font-size: 100%;
@@ -132,20 +143,22 @@ input:focus{
 
 /* delete car */
 
-.delete-car{
+.delete-car {
 	background-color: #1b1f22;
 	width: 995px;
 	margin: 100px auto 200px;
 	border-radius: 5px;
 }
-.delete-car form{
+
+.delete-car form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 50px;
 	height: 150px;
 }
-.delete-car form input:nth-child(1){
+
+.delete-car form input:nth-child(1) {
 	border: 1px #ccc solid;
 	border-radius: 10px;
 	height: 40px;
@@ -209,7 +222,7 @@ input:focus{
 }
 
 .info-box {
-	padding: 50px;
+	padding: 25px;
 	width: 450px;
 	transition-duration: 1s;
 	z-index: 10;
@@ -225,17 +238,19 @@ input:focus{
 
 .info-box.right {
 	top: 48px;
-    right: -445px;
-    /* transform: translateX(-100%); */
-    height: 753px;
+	right: -445px;
+	/* transform: translateX(-100%); */
+	height: 753px;
 
 }
+
 .info-box:hover {
 	transform: translateX(2%);
 	/* transition-delay: 1s; */
-	
+
 }
-.info-box.right:hover{
+
+.info-box.right:hover {
 	transform: translateX(-2%);
 
 }
@@ -332,7 +347,8 @@ input:focus{
 	cursor: pointer;
 	/* transform: rotateY(-180deg); */
 }
-.info-box.right .open-btn{
+
+.info-box.right .open-btn {
 	left: -21px;
 	border-radius: 5px;
 	border-bottom-right-radius: 0;
@@ -383,7 +399,7 @@ input:focus{
 	margin-left: 661px;
 }
 
-.alert{
+.alert {
 	width: 995px;
 	margin: 60px auto;
 	display: flex;
@@ -391,20 +407,30 @@ input:focus{
 	justify-content: space-between;
 	align-items: center;
 }
+
 .alert i {
 	visibility: hidden;
 	width: 30px;
 	height: 30px;
-	
+
 }
-.alert:hover i{
+
+.alert:hover i {
 	visibility: visible;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.alert i:hover{
+
+.alert i:hover {
 	cursor: pointer;
 	background-color: #e7fff4;
 	border-radius: 3px;
+}
+
+iframe {
+	width: 95%;
+	height: 85%;
+	overflow: hidden;
+	border-radius: 10px;
 }

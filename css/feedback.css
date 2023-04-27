@@ -5,15 +5,16 @@ body {
 }
 
 .navbar {
-	background-color: #1e2125 !important;
-	box-shadow: 0 0 0 !important;
+    background-color: #1e2125 !important;
+    box-shadow: 0 0 0 !important;
 }
-body > h2 {
+
+body>h2 {
     margin: 20px 0;
     text-align: center;
 }
 
-.box{
+.box {
     background-color: #1b1f22;
     min-height: 300px;
     width: 400px;
@@ -21,15 +22,40 @@ body > h2 {
     padding: 30px;
     border-radius: 10px;
 }
-.box h4{
+
+.box h4 {
     margin: 20px 0;
 }
-.box h4:first-child 
-,.box h4:nth-child(4){
+
+.box h4:first-child,
+.box h4:nth-child(4) {
     text-transform: capitalize;
 }
 
-p::first-letter{
+p::first-letter {
     text-transform: uppercase;
     line-height: 1.6;
+}
+
+@media (width < 480px) {
+    .navbar {
+        display: none;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    #up-btn {
+        display: none;
+    }
+
+    .box {
+        width: 300px;
+    }
+
+    body>h2 {
+        display: none;
+    }
+
 }
