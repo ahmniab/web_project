@@ -85,8 +85,7 @@ if (isset($_POST["logout"])) {
             </div>
             <div class="info-box">
                 <div class="photo-box">
-                    <img src="img/blank-profile.png">
-                    <div class="glass" onclick="toggleVisibility()"><i class="fa-regular fa-pen-to-square"></i></div>
+                    <img src="<?php echo $_SESSION['profile']; ?>">
                     <h2><?php echo $_SESSION['name']; ?></h2>
                 </div>
                 <h3>Profile Information</h3>
@@ -112,6 +111,7 @@ if (isset($_POST["logout"])) {
         </div>
     </div>
     <script src="js/ourframe.js"></script>
+    <script src="js/drop-zone.js"></script>
 </body>
 
 </html>

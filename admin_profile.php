@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/ourframe.css">
-    <link rel="stylesheet" href="css/drop-zone.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/drop-zone.css">
     <link rel="stylesheet" href="css/admin.css">
 
 </head>

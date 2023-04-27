@@ -13,35 +13,25 @@
 </body>
 </html>
 <?php
-
+  session_start();
  if(isset($_FILES['photo'])){
   $file_name = $_FILES['photo']['name'];
   $file_size =$_FILES['photo']['size'];
   $file_tmp =$_FILES['photo']['tmp_name'];
   $file_type=$_FILES['photo']['type'];
   $file_ext=strtolower(end(explode('.',$_FILES['photo']['name'])));
-
-  $extensions= array("jpeg","jpg","png");
-
-  if(!in_array($file_ext,$extensions)){
-    echo "Extension not allowed, please choose a JPEG, JPG, or PNG file.";
-    exit();
-  }
-
-
-  $upload_path = 'carimgs/'. 123 .".". $file_ext ;
-
+  $upload_path = 'img/'.$_SESSION['user_name'].".".$file_ext ;
   echo '<br>' ;
   echo $file_tmp ;
   echo '<br>' ;
-  // if(move_uploaded_file($file_tmp,$upload_path)){
-  //   echo "Success! Your file has been uploaded.";
-    // echo $file_tmp ;
-    // echo '<br>' ;
+  if(move_uploaded_file($file_tmp,$upload_path)){
+    echo "Success! Your file has been uploaded.";
+    echo '<br>' ;
+    echo $upload_path ;
 
-  // }else{
-  //   echo "Error uploading file";
-  // }
+  }else{
+    echo "Error uploading file";
+  }
 }
 
 
