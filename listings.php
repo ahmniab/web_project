@@ -44,13 +44,13 @@ $select_prods = $conn->query($sql);
             if (isset($_SESSION['user_name'])) {
             ?>
                 <div class="profile">
-                    <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();" style="cursor: pointer;">
+                    <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();" style="cursor: pointer; border-radius: 50%;">
                     <div class="drop-list">
                         <ul id="drop-list">
                             <li><a href="user_profile.php">profile</a></li>
                             <li>
                                 <a>
-                                    <form action="user_profile.php" method="post" style="cursor: pointer;" name="logout_btn" onclick="_logout();">
+                                    <form action="user_profile.php" method="post" style="cursor: pointer;border-radius: 50%;" name="logout_btn" onclick="_logout();">
                                         logout
                                         <i class="fa-solid fa-right-from-bracket"></i>
                                         <input type="hidden" name="logout" value="1">
@@ -116,7 +116,7 @@ $select_prods = $conn->query($sql);
                     </div>
                     <div class="captions">
                         <p class="product_name"><?php echo $row["name"] ?></p>
-                        <p class="price"><?php echo $row["price"] ?>$</p>
+                        <p class="price"><?php echo number_format($row["price"]);?> $</p>
                     </div>
                     <form action="showcar.php" method="post">
                         <input type="hidden" name="car_num" value="<?php echo $row['car_num'] ?>">
