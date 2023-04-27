@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/ourframe.css">
     <link rel="stylesheet" href="css/signup.css">
-    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
 
 </head>
 

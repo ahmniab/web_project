@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION = $row;
             if (isset($_POST['remember_me'])) {
                 if ($_POST['remember_me'] === "true") {
-                    setcookie("user_name",$UserName , time() + 60 * 60 * 24 * 30);
+                    setcookie("user_name", $UserName, time() + 60 * 60 * 24 * 30);
                 }
             }
         } else {
@@ -69,7 +69,7 @@ if (isset($_SESSION['admin'])) {
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/ourframe.css">
     <link rel="stylesheet" href="css/signin.css">
-    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -82,7 +82,7 @@ if (isset($_SESSION['admin'])) {
             <div class="box">
 
                 <div class="back-home">
-                <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+                    <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
                 </div>
                 <h2>Sign in</h2>
                 <?php

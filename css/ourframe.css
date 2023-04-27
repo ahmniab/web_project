@@ -300,17 +300,17 @@
     padding: 0;
 }
 
-.nav-btn:hover div ul li:hover {
-    color: aquamarine;
+.nav-btn div ul li a:hover{
+    color: #fff !important;
 }
-
-.nav-btn div ul li {}
 
 .nav-btn div ul li {
     margin: 30px 0;
-    position: relative;
 }
 
+.nav-btn div ul li a{
+    position: relative;
+}
 .nav-btn div ul li a::after {
     content: "";
     width: 100%;

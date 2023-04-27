@@ -15,7 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="stylesheet" href="css/ourframe.css">
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/all.min.css">
-
+  <link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
+  <title>feedback</title>
 </head>
 
 <body>

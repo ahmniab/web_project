@@ -85,9 +85,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		echo '<br>';
 		if (move_uploaded_file($file_tmp, $upload_path)) {
 			$sql = "UPDATE users SET profile = '$upload_path' WHERE user_name='$user_name_Session'";
-			if($conn->query($sql))
-			{
-				$_SESSION['profile'] = $upload_path ;
+			if ($conn->query($sql)) {
+				$_SESSION['profile'] = $upload_path;
 			}
 		} else {
 			echo "Error uploading file";
@@ -116,6 +115,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	<link rel="stylesheet" href="css/drop-zone.css">
 	<link rel="stylesheet" href="css/profile.css">
 	<link rel="stylesheet" href="css/edit_profile.css">
+	<link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
+
 </head>
 
 <body>

@@ -20,7 +20,7 @@ $select_prods = $conn->query($sql);
     <!-- normalize -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- ico -->
-    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
 
     <title>cars</title>
 </head>

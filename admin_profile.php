@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vendor</title>
+    <title>U MOTORS</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/ourframe.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/drop-zone.css">
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
 
 </head>
 
@@ -53,6 +54,9 @@
                 ?> -->
     </div>
     <div class="parent">
+        <div id="loading">
+    <div class="spinner"></div>
+  </div>
 
         <nav class="navbar">
             <div>
@@ -81,9 +85,6 @@
                 </div>
             </div>
         </nav>
-        <div id="loading">
-            <div class="spinner"></div>
-        </div>
         <div class="container">
             <div class="info-box glass right" id="info-box-right" onclick="open_right();">
                 <h1>feed back page will appear here using iframe 👌😉</h1>

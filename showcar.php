@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- normalize -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- ico -->
-    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
 
 
     <title>Inspect</title>

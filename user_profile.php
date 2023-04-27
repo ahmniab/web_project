@@ -45,11 +45,11 @@ if (isset($_POST["logout"])) {
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/ourframe.css">
     <link rel="stylesheet" href="css/profile.css">
+    <link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
 </head>
 
 <body>
 
-    <script src="js/ourframe.js"></script>
     <nav class="navbar">
         <div>
             <ul>
@@ -60,7 +60,7 @@ if (isset($_POST["logout"])) {
             </ul>
         </div>
         <div class="profile">
-                <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();" style="cursor: pointer; border-radius: 50%;">
+            <img src="<?php echo $_SESSION['profile']; ?>" alt="error" onclick="dropList();" style="cursor: pointer; border-radius: 50%;">
                 <div class="drop-list">
                     <ul id="drop-list">
                         <li>
@@ -75,12 +75,12 @@ if (isset($_POST["logout"])) {
                     </ul>
                 </div>
             </div>
-    </nav>
-
-    <div class="parent">
-
-        <div class="container">
-            <div id="loading">
+        </nav>
+        
+        <div class="parent">
+            
+            <div class="container">
+                <div id="loading">
                 <div class="spinner"></div>
             </div>
             <div class="info-box">
