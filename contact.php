@@ -5,6 +5,7 @@ if (isset($_SESSION['admin'])) {
         header('Location: feedback.php');
         exit;
     }
-}
+  }
 header('Location: user_contact.php');
 exit;
+  

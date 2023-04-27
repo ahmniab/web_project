@@ -1,3 +1,9 @@
+<?php
+require_once 'connection.php';
+
+$sql = "SELECT * FROM feedback";
+$select_prods = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,57 +56,21 @@
     </span>
     <h2>Feedback</h2>
     <div class="container">
-
-        <div class="box">
-            <h4>Name : name</h4>
-            <h4>Email : email@email.com</h4>
-            <h4>Phone : 012346789</h4>
-            <h4>subject : subject</h4>
+    <?php
+            while ($row = mysqli_fetch_assoc($select_prods)) {
+            ?>
+                <div class="box">
+                <h4>Name : <?php echo $row ["name"] ?></h4>
+            <h4>Email : <?php echo $row ["email"] ?></h4>
+            <h4>Phone : <?php echo $row ["phone"] ?></h4>
+            <h4>subject : <?php echo $row ["subject"] ?></h4>
             <p>
-                lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Inventore, quasi maxime culpa porro commodi obcaecati nemo
-                aliquid sunt temporibus omnis odio labore alias fugit similique vero,
-                quam officiis rerum non!
+            <?php echo $row ["massege"] ?>
             </p>
-        </div>
-        <div class="box">
-            <h4>Name : name</h4>
-            <h4>Email : email@email.com</h4>
-            <h4>Phone : 012346789</h4>
-            <h4>subject : subject</h4>
-            <p>
-                lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Inventore, quasi maxime culpa porro commodi obcaecati nemo
-                aliquid sunt temporibus omnis odio labore alias fugit similique vero,
-                quam officiis rerum non!
-            </p>
-        </div>
-        <div class="box">
-            <h4>Name : name</h4>
-            <h4>Email : email@email.com</h4>
-            <h4>Phone : 012346789</h4>
-            <h4>subject : subject</h4>
-            <p>
-                lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Inventore, quasi maxime culpa porro commodi obcaecati nemo
-                aliquid sunt temporibus omnis odio labore alias fugit similique vero,
-                quam officiis rerum non!
-            </p>
-        </div>
-        <div class="box">
-            <h4>Name : name</h4>
-            <h4>Email : email@email.com</h4>
-            <h4>Phone : 012346789</h4>
-            <h4>subject : subject</h4>
-            <p>
-                lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Inventore, quasi maxime culpa porro commodi obcaecati nemo
-                aliquid sunt temporibus omnis odio labore alias fugit similique vero,
-                quam officiis rerum non!
-            </p>
-        </div>
-
-
+                </div>
+            <?php
+            }
+            ?>
     </div>
 
 </body>
