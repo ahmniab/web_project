@@ -1,0 +1,35 @@
+body {
+    font-family: 'Trebuchet MS', Arial;
+    background-color: #212529;
+    color: #fff;
+}
+
+.navbar {
+	background-color: #1e2125 !important;
+	box-shadow: 0 0 0 !important;
+}
+body > h2 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.box{
+    background-color: #1b1f22;
+    min-height: 300px;
+    width: 400px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+.box h4{
+    margin: 20px 0;
+}
+.box h4:first-child 
+,.box h4:nth-child(4){
+    text-transform: capitalize;
+}
+
+p::first-letter{
+    text-transform: uppercase;
+    line-height: 1.6;
+}

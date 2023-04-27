@@ -10,18 +10,6 @@ function scrollToBottom() {
 		behavior: 'smooth'
 	});
 }
-function toggleVisibility() {
-	var element = document.getElementById("drop-zone");
-	if (element.style.display = "block") {
-		element.style.display = "none";
-
-	}
-	else {
-		element.style.display = "block";
-	}
-
-
-}
 function open_left() {
 	if (document.getElementById("info-box-left").style.transform == "translateX(90%)") {
 		document.getElementById("info-box-left").style.transform = "translateX(0%)";

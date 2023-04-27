@@ -3,12 +3,12 @@
 }
 
 body {
-	font-family: 'Trebuchet MS', Arial;
 	/* background-image: url("../img/backgroud-car.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center; */
+	font-family: 'Trebuchet MS', Arial;
 	background-color: #212529;
 	color: #fff;
 }

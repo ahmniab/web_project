@@ -156,8 +156,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<form action="edit_profile.php" method="POST" enctype="multipart/form-data">
 			<div class="info-box">
 				<div class="photo-box">
-					<!-- <img src="img/blank-profile.png"> -->
-					<div class="glass" onclick="toggleVisibility()"><i class="fa-regular fa-pen-to-square"></i></div>
 					<h2><?php echo $_SESSION['name']; ?></h2>
 				</div>
 				<h3>Profile Information</h3>
