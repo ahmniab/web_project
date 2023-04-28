@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2023 at 05:09 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Apr 28, 2023 at 05:46 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,34 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `users`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `listings`
---
-
-CREATE TABLE `listings` (
-  `car_num` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `model` text NOT NULL,
-  `caption` text NOT NULL,
-  `img` text NOT NULL,
-  `price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `listings`
---
-
-INSERT INTO `listings` (`car_num`, `name`, `model`, `caption`, `img`, `price`) VALUES
-(1, 'audis', '', '', 'carimgs\\audis5.png', 123),
-(2, 'bmw', '', '', 'carimgs\\bmwe34.png', 5550),
-(3, 'bmwm140i', '', '', 'carimgs\\bmwm140i.png', 0),
-(4, 'bmw', '', '', 'carimgs\\bmwm140i.png', 123),
-(5, 'audisq7', '', '', 'carimgs\\audisq7.png', 789),
-(24, 'car1', '123', 'jvsabmzcx', 'carimgs/6.jpg', 0),
-(25, 'mercedes', 'G class', 'an amazing car', 'carimgs/7.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -71,6 +43,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_name`, `name`, `password`, `email`, `admin`, `profile`) VALUES
 ('123', '', '123456', '', 0, 'img/blank-profile.png'),
 ('ahmed', 'ahmed nabil', 'no', 'no', 1, 'img/blank-profile.png'),
+('ahmedragab', 'ahmed74', '123123', 'ahmed@gmail.com', 1, 'img/ahmedragab.jpg'),
 ('hamed', 'hi', 'kk', 'uuujj', 0, 'img/blank-profile.png');
 
 --
@@ -78,26 +51,10 @@ INSERT INTO `users` (`user_name`, `name`, `password`, `email`, `admin`, `profile
 --
 
 --
--- Indexes for table `listings`
---
-ALTER TABLE `listings`
-  ADD PRIMARY KEY (`car_num`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_name`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `listings`
---
-ALTER TABLE `listings`
-  MODIFY `car_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

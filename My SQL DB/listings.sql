@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2023 at 09:23 AM
+-- Generation Time: Apr 28, 2023 at 05:46 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,16 +42,15 @@ CREATE TABLE `listings` (
 --
 
 INSERT INTO `listings` (`car_num`, `name`, `model`, `caption`, `img`, `price`, `views`) VALUES
-(1, 'audis', '', '', 'carimgs\\audis5.png', 123, 37),
-(2, 'bmw', '', '', 'carimgs\\bmwe34.png', 5550, 16),
-(4, 'bmw', '', '', 'carimgs\\bmwm140i.png', 123, 4),
+(1, 'audis', '', '', 'carimgs\\audis5.png', 123, 0),
+(2, 'bmw', '', '', 'carimgs\\bmwe34.png', 5550, 3),
+(4, 'bmw', '', '', 'carimgs\\bmwm140i.png', 123, 0),
 (5, 'audisq7', '', '', 'carimgs\\audisq7.png', 789, 0),
-(26, 'marcedes', '2023', 'g class', 'carimgs/8.jpg', 500000, 117),
-(27, 'marcedes', '2022', 'marceedes maybach', 'carimgs/27.jpeg', 1000000, 8),
-(29, 'BMW', '2017', 'BMW M3', 'carimgs/29.jpeg', 150000, 23),
-(30, 'marcedes', '2020', 'Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy te', 'carimgs/30.jpeg', 1000000, 43),
-(31, 'Hundai', '2020', 'Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is text copy that serves to fill a space without saying anything meaningful.', 'carimgs/31.jpeg', 80000, 3),
-(32, 'hundai', '2019', 'Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is text copy that serves to fill a space without saying anything meaningful. ', 'carimgs/32.jpg', 70000, 0);
+(26, 'hundai', '2020', 'asaaaaaaaaaaaaaaaaaaaaaaaaddddddddddddddddddddddaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'carimgs/26.jpeg', 80000, 15),
+(27, 'bmw', '2020', 'njhhjghfgdfgdgjghjfgghddsrttyuyu', 'carimgs/27.jpeg', 1000000, 4),
+(28, 'bmw', '2020', 'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.', 'carimgs/28.jpeg', 70000, 36),
+(29, 'lamborghini aventador', '2021', 'Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.', 'carimgs/29.jpg', 1000000, 1),
+(30, 'lamborghini ', '2019', 'Each and every detail of the Aventador bears the hallmarks of the House of the Raging Bull. It is a true masterpiece of design that expresses dynamism and power, with the carbon-fiber monocoque the jewel in its crown.', 'carimgs/30.png', 1101110, 1);
 
 --
 -- Indexes for dumped tables
@@ -71,7 +70,7 @@ ALTER TABLE `listings`
 -- AUTO_INCREMENT for table `listings`
 --
 ALTER TABLE `listings`
-  MODIFY `car_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `car_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
