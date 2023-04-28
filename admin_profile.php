@@ -26,7 +26,8 @@
                     if (isset($_POST['car_name'])) {
                         $car_name = $_POST['car_name'];
                         $car_model = $_POST['model'];
-                        $car_caption = $_POST['caption'];
+                        $car_caption = nl2br($_POST['caption']);
+
                         $car_price = $_POST['price'];
                         if (isset($_FILES['img'])) {
                             $file_name = $_FILES['img']['name'];
@@ -55,8 +56,8 @@
     </div>
     <div class="parent">
         <div id="loading">
-    <div class="spinner"></div>
-  </div>
+            <div class="spinner"></div>
+        </div>
 
         <nav class="navbar">
             <div>
@@ -88,7 +89,7 @@
 
         <div class="container">
             <div class="info-box glass right" id="info-box-right" onclick="open_right();">
-            <h2 style="text-align: center; margin:10px ;">Feedback</h2>
+                <h2 style="text-align: center; margin:10px ;">Feedback</h2>
                 <iframe src="feedback.php" frameborder="0"></iframe>
 
                 <div class="open-btn " id="open-btn">
@@ -97,16 +98,17 @@
             </div>
             <?php
 
-            if (isset($_POST['add-car'])) {
-                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                if (isset($_POST['add-car'])) {
                     if (count($err) === 0) {
-                        $sql = "INSERT INTO listings (name,model,caption,img,price) VALUES ('$car_name', '$car_model', '$car_caption','$file_name','$car_price')";
-                        if ($conn->query($sql)) {
-                            echo '<div class="alert alert-success" role="alert">Added successfully ! <i class="fa-solid fa-x" onclick="close_alert();"></i></div>';
+                        $sql = $conn->prepare("INSERT INTO listings (name,model,caption,img,price) VALUES (?, ?, ?,?,?)");
+                        $sql->bind_param("sssss" ,$car_name , $car_model,$car_caption,$file_name , $car_price);
+                        if ($sql->execute()) {
+                            echo '<div class="alert alert-success"id="alert-success" role="alert">Added successfully ! <i class="fa-solid fa-x" onclick="close_alert();"></i></div>';
                         }
                     } else {
 
-                        echo '<div class="alert alert-danger" role="alert" id="alert-success" onclick="close_alert();">'.$err[1].'
+                        echo '<div class="alert alert-danger" role="alert" id="alert-success" onclick="close_alert();">' . $err[1] . '
                             <i class="fa-solid fa-x" onclick="close_alert();"></i>
                             </div>';
                     }

@@ -126,60 +126,10 @@ button {
 .product_name {
     font-size: 20px;
     font-weight: bold;
+    margin: 10px auto 3px;
 }
 
 .price {
     font-size: 13px;
     font-style: italic;
 }
-
-/* ============= Card Temp #2 ============= */
-
-/* .card {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(4px);
-    display: flex;
-    width: 1200px;
-    border-radius: 10px;
-    height: 150px;
-    justify-content: space-between;
-    font-family: sans-serif;
-    overflow: hidden;
-    padding: 20px 10px;
-}
-
-.card img {
-    justify-self: center;
-    align-self: center;
-    width: max-content;
-    height: max-content;
-    scale: 2.5;
-    padding: 20px;
-    -webkit-mask-image: linear-gradient(to right, #000, rgba(0,0,0,0));
-    mask-image: linear-gradient(to right, #000, rgba(0,0,0,0));
-}
-
-.card button {
-    width: 20%;
-    background: rgba(255,255,255,0.5);
-    border: 0;
-    border-radius: 10px;
-    outline: none;
-}
-
-.captions {
-    display: block;
-}
-
-.product_name {
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.price {
-    font-size: 20px;
-    color: rgba(255,255,255,0.8);
-    font-style: italic;
-} */
-
-/* ////////////////////////////////////// */

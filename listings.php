@@ -116,7 +116,10 @@ $select_prods = $conn->query($sql);
                     </div>
                     <div class="captions">
                         <p class="product_name"><?php echo $row["name"] ?></p>
-                        <p class="price"><?php echo number_format($row["price"]);?> $</p>
+                        <h6 style="margin: 3px 0 7px;"><?php echo $row["model"] ?></h6>
+                        <p class="price"><i class="fa-regular fa-eye" title="Views :<?php echo $row['views']; ?>"></i>
+                            <?php echo number_format($row["views"]); ?>
+                        </p>
                     </div>
                     <form action="showcar.php" method="post">
                         <input type="hidden" name="car_num" value="<?php echo $row['car_num'] ?>">

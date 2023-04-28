@@ -1,23 +1,21 @@
 <?php
 require_once 'connection.php';
-if (isset($_POST['car_num'])){
-$car_number=$_POST['car_num'];
-$sql = "SELECT * FROM listings where car_num = ".$car_number;
-$select_prods = $conn->query($sql);
-$row = mysqli_fetch_assoc($select_prods);
+include 'functions.php';
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    addOneView($_POST['car_num'], $conn);
+}
+if (isset($_POST['car_num'])) {
+    $car_number = $_POST['car_num'];
+    $sql = "SELECT * FROM listings where car_num = " . $car_number;
+    $select_prods = $conn->query($sql);
+    $row = mysqli_fetch_assoc($select_prods);
 }
 
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php
-include 'functions.php';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    addOneView($_POST['car_num'] , $conn);
-}
-
-?>
 
 <head>
     <meta charset="UTF-8">
@@ -50,40 +48,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </a>
             <h1 style="margin-right: auto; color: whitesmoke; padding-right: 80px;"><?php echo $row['name']; ?></h1>
         </div>
-        <h3> <strong>model : </strong><?php echo $row['model'];?></h3>
+        <h3> <?php echo $row['model']; ?></h3>
 
         <!--          container             -->
         <div class="container">
             <div class="car_pic_holder">
-                
-                <?php
-                {
-                ?>
-                <!-- <div > -->
-                    <img src="<?php echo $row["img"] ?>" alt="IMAGE" style="object-fit: contain;" >
-                <!-- </div> -->
-                <?php
-                }
-                ?> 
-                <h3><strong>Price :</strong><?php echo number_format($row['price']);?> $</h3>
+
+
+
+                <img src="<?php echo $row["img"] ?>" alt="IMAGE" style="object-fit: contain;">
+
+
             </div>
 
-            <hr>
-
-            <h3>
-                <strong> <span class="about">about :<span><br></strong><?php echo $row['caption'];?>
-            </h3>
+            <h3>about</h3>
+            <p class="about">
+                <?php echo $row['caption']; ?>
+            </p>
             <div class="footer">
-                        <p>
-                        <i class="fa-regular fa-eye" title="Views :<?php echo $row['views'];?>"></i>
-                        <?php echo $row['views'];?></p>
-                        <p>
-                        <i class="fa-regular fa-calendar" title="Date"></i>
-                        3/28/2023                 </p>
-                        
+                <div>
+                    <i class="fa-regular fa-eye" title="Views :<?php echo $row['views']; ?>"></i>
+                    <?php echo $row['views']; ?>
+                </div>
+                <h3><strong>Price :</strong><?php echo number_format($row['price']); ?> $</h3>
+                <?php
+                if (isset($_SESSION['admin'])) {
+                    if ($_SESSION['admin'] == 1) {
+                        echo "<h4>Car Num : ".$row['car_num']."</h4>" ;
+                    }
+                }
+                ?>
+
+
             </div>
         </div>
-        
+
     </div>
     <script src="js/ourframe.js"></script>
 
