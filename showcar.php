@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- normalize -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- ico -->
-    <link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
 
 
     <title>Inspect</title>
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 {
                 ?>
                 <!-- <div > -->
-                    <img src="<?php echo $row["img"] ?>" alt="IMAGE" style="object-fit: contain;" >
+                    <img src="<?php echo $row["img"]?>" alt="IMAGE" style="object-fit: contain;" >
                 <!-- </div> -->
                 <?php
                 }
@@ -71,16 +71,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <hr>
 
             <h3>
-                <strong> <span class="about">about :<span><br></strong><?php echo $row['caption'];?>
+                <strong> <span class="about">about :<span></strong><br><span class="about2"> <?php echo $row['caption'];?></span>
             </h3>
-            <div class="footer">
-                        <p>
-                        <i class="fa-regular fa-eye" title="Views :<?php echo $row['views'];?>"></i>
-                        <?php echo $row['views'];?></p>
-                        <p>
+            <hr>
+            <div class="footer1">
+                        <span class="views">
+                        <i class="fa-regular fa-eye" title="Views" :<?php echo $row['views'];?>"></i>
+                        <?php echo $row['views'];?>
+                        </span>
+                        <span class="date">
                         <i class="fa-regular fa-calendar" title="Date"></i>
-                        3/28/2023                 </p>
-                        
+                        3/28/2023 
+                        </span>
             </div>
         </div>
         

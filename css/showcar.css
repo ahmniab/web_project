@@ -50,7 +50,7 @@ button {
     /* border-radius: 20px; */
     /* border: 5px solid black; */
     width: 1000px;
-    padding: 30px;
+    padding: 28px;
     margin: 0 auto;
     /* height: 600px; */
     background-color: #1b1f22;
@@ -61,14 +61,17 @@ button {
 
 }
 
-.container p {
-    word-break: normal;
-    line-height: 1.6;
-    width: auto;
-    margin: 0 0 0 0;
+.about2 {
+    /* word-break: normal;
+    line-height: 1.6; */
+    /* width: auto;
+    margin: auto; */
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+    padding: 10px;
+    font-size: 20px;
+
 }
 
 .car_pic_holder {
@@ -107,15 +110,24 @@ button{
     margin: 0 auto !important;
 }
 
-.footer{
-    margin-top: 20px;
-    padding-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #eee;
-    width:auto;
-    height: 25px; 
-    line-height: 2; 
+.footer1{
+    line-height: 0.5; 
+    width: auto;
+    margin: 0 0 0 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.views{
+    padding-right: 38%;
+    padding-left: 2%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.date{
+    padding-left: 38%;
+    padding-right: 2%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .about{
