@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2023 at 06:21 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Apr 28, 2023 at 05:46 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -112,12 +112,6 @@ INSERT INTO `users` (`user_name`, `name`, `password`, `email`, `admin`, `profile
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `listings`
---
-ALTER TABLE `listings`
-  ADD PRIMARY KEY (`car_num`);
 
 --
 -- Indexes for table `users`
