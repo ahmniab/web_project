@@ -181,7 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					</div>
 				</div>
 				<button onclick="checkPasswords()" type="button" class="btn btn-primary" name="edit">Edit Profile</button>
-				<a href="user_profile.php"><button class="btn btn-secondary">cancel</button></a>
+				<a href="user_profile.php"><button type="button" class="btn btn-secondary">cancel</button></a>
 		</form>
 	</div>
 	</div>
