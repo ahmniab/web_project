@@ -176,8 +176,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						<input type="text" name="name" value=<?php echo $_SESSION['name']; ?>>
 						<input type="text" name="email" value=<?php echo $_SESSION['email']; ?>>
 						<input type="text" name="phone" value=<?php echo $_SESSION['phone']; ?>>
-						<input type="password" name="password" id="password">
-						<input type="password" name="cpassword" id="cnfrmpassword">
+						<input type="password" name="password" id="password" value=<?php echo $_SESSION['password']; ?>>
+						<input type="password" name="cpassword" id="cnfrmpassword" value=<?php echo $_SESSION['password']; ?>>
 					</div>
 				</div>
 				<button onclick="checkPasswords()" type="button" class="btn btn-primary" name="edit">Edit Profile</button>
@@ -194,6 +194,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		alerm.style.display = "none";
 
 		function msg(worning) {
+			window.scrollTo({
+				top: 0
+			});
 			const alerm = document.getElementById("alert");
 			alerm.style.display = "block";
 			alerm.innerHTML = " ";
@@ -201,21 +204,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		}
 
 		function checkPasswords() {
-			var password = document.getElementById("password");
+			var password = document.getElementById("password").value;
 			var confirmPassword = document.getElementById("cnfrmpassword").value;
-			if (password.value == "") {
-				password.value = "<?php echo $_SESSION['password']; ?>" ;
-				document.sign_up.submit();
+			if (password == "") {
+				msg("password is empty");
 
+			} else if (confirmPassword == "") {
+				msg("Please confirm your password");
 			} else {
-				if (confirmPassword == "") {
-					msg("Please confirm your password");
-				} else if (password.value.length < 6) {
+
+				if (password.length < 6) {
 					msg("password is less than 6");
-				} else if (password.value.length > 15) {
+				} else if (password.length > 15) {
 					msg("Password is greater than 15");
 				} else {
-					if (confirmPassword != password.value) {
+					if (confirmPassword != password) {
 						msg("Confirm password doesn't equal password");
 					} else {
 						document.sign_up.submit();
