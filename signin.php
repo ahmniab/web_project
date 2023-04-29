@@ -100,7 +100,7 @@ if (isset($_SESSION['admin'])) {
                 </div>
                 <input class="sign-in" type="submit" value="sign in">
                 <div class="signup">
-                    <p>Dont have an account?</p><a class="new" href="signup.html">Sign up</a>
+                    <p>Dont have an account?</p><a class="new" href="signup.php">Sign up</a>
                 </div>
             </div>
         </form>

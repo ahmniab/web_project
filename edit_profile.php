@@ -88,9 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			if ($conn->query($sql)) {
 				$_SESSION['profile'] = $upload_path;
 			}
-		} else {
-			echo "Error uploading file";
-		}
+		} 
 	}
 
 	header('Location: user_profile.php');
@@ -153,7 +151,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<div id="loading">
 			<div class="spinner"></div>
 		</div>
-		<form action="edit_profile.php" method="POST" enctype="multipart/form-data">
+		<form name="sign_up" action="edit_profile.php" method="POST" enctype="multipart/form-data">
+			<div class="alert alert-danger" role="alert" id="alert"></div>
 			<div class="info-box">
 				<div class="photo-box">
 					<h2><?php echo $_SESSION['name']; ?></h2>
@@ -169,7 +168,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						<li>Name:</li>
 						<li>Email:</li>
 						<li>Phone:</li>
-						<li>Password:</li>
+						<li>New Pass:</li>
 						<li>Confirm:</li>
 					</ul>
 					<div class="info">
@@ -177,11 +176,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						<input type="text" name="name" value=<?php echo $_SESSION['name']; ?>>
 						<input type="text" name="email" value=<?php echo $_SESSION['email']; ?>>
 						<input type="text" name="phone" value="phone">
-						<input type="password" name="password" value=<?php echo $_SESSION['password']; ?>>
-						<input type="password" name="cpassword" value=<?php echo $_SESSION['password']; ?>>
+						<input type="password" name="password" id="password">
+						<input type="password" name="cpassword" id="cnfrmpassword">
 					</div>
 				</div>
-				<button type="submit" class="btn btn-primary" name="edit">Edit Profile</button>
+				<button onclick="checkPasswords()" type="button" class="btn btn-primary" name="edit">Edit Profile</button>
 				<a href="user_profile.php"><button class="btn btn-secondary">cancel</button></a>
 		</form>
 	</div>
@@ -190,6 +189,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	<script src="js/ourframe.js"></script>
 	<script src="js/drop-zone.js"></script>
+	<script>
+		const alerm = document.getElementById("alert");
+		alerm.style.display = "none";
+
+		function msg(worning) {
+			const alerm = document.getElementById("alert");
+			alerm.style.display = "block";
+			alerm.innerHTML = " ";
+			alerm.insertAdjacentHTML('beforeend', '<i class="fa-solid fa-circle-exclamation fa-beat"></i> ' + worning);
+		}
+
+		function checkPasswords() {
+			var password = document.getElementById("password").value;
+			var confirmPassword = document.getElementById("cnfrmpassword").value;
+			if (password == "") {
+				password = "<?php echo $_SESSION['password'];?>"
+				document.sign_up.submit();
+
+			}  
+			else {
+				if (confirmPassword == "") {
+					msg("Please confirm your password");
+				} 
+				
+				else if (password.length < 6) {
+					msg("password is less than 6");
+				} else if (password.length > 15) {
+					msg("Password is greater than 15");
+				} else {
+					if (confirmPassword != password) {
+						msg("Confirm password doesn't equal password");
+					} else {
+						document.sign_up.submit();
+					}
+				}
+			}
+
+		}
+	</script>
 </body>
 
 </html>

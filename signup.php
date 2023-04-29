@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input class="cpass" type="password" placeholder="Confirm Password" id="cnfrmpassword">
                 <button type="button" class="sign-up" name="signup" onclick="checkPasswords()">sign up</button>
                 <div class="signin">
-                    <p>Already have an account?</p><a class="new" href="signin.html">Sign in</a>
+                    <p>Already have an account?</p><a class="new" href="signin.php">Sign in</a>
                 </div>
             </form>
             <script src="js/checkpass.js"></script>

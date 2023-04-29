@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `users`
 --
+DROP DATABASE IF EXISTS users;
 
-DROP DATABASE users;
 CREATE DATABASE users;
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_name`, `name`, `password`, `email`, `admin`, `profile`) VALUES
 ('123', '', '123456', '', 0, 'img/blank-profile.png'),
-('ahmed', 'ahmed', 'no', 'no@no', 1, 'img/ahmed.jpg'),
+('ahmed', 'ahmed', 'no', 'no@no', 1, 'img/blank-profile.png'),
 ('hamed', 'hi', 'kk', 'uuujj', 0, 'img/blank-profile.png');
 
 --
@@ -126,9 +126,7 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for table `listings`
 --
-ALTER TABLE `listings`
-  MODIFY `car_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-COMMIT;
+ALTER TABLE `listings` CHANGE `car_num` `car_num` INT(11) NOT NULL AUTO_INCREMENT, add PRIMARY KEY (`car_num`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
