@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sign in </title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/ourframe.css">
+    <link rel="stylesheet" href="css/signin.css">
+    <link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- <div>
 <?php
 
 include 'connection.php';
@@ -48,31 +66,9 @@ if (isset($_SESSION['admin'])) {
     header('Location: index.php');
     exit;
 }
-
-
-
-
-
-
-
 ?>
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>sign in </title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/ourframe.css">
-    <link rel="stylesheet" href="css/signin.css">
-    <link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
-</head>
-
-<body>
+    </div> -->
     <div id="loading">
         <div class="spinner"></div>
     </div>
