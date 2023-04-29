@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $name = $_POST['name'];
+    $phone = $_POST['phone'];
 
     $userNameInfo = $conn->prepare("select * from users where user_name = '" . $user_name . "'");
     $userNameInfo->execute();
@@ -18,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $wrongMsg = 'User name already exists';
     } else {
 
-        $sql = "INSERT INTO users (user_name, email, password,profile,name) VALUES ('$user_name', '$email', '$password','img/blank-profile.png','$name')";
+        $sql = "INSERT INTO users (user_name, email,phone, password,profile,name) VALUES ('$user_name', '$email','$phone', '$password','img/blank-profile.png','$name')";
         if ($conn->query($sql) === TRUE) {
             setcookie("user_name", $user_name);
             header('Location: index.php');

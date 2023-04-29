@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			if ($conn->query($sql)) {
 				$_SESSION['profile'] = $upload_path;
 			}
-		} 
+		}
 	}
 
 	header('Location: user_profile.php');
@@ -175,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						<input type="text" name="user_name" value=<?php echo $_SESSION['user_name']; ?>>
 						<input type="text" name="name" value=<?php echo $_SESSION['name']; ?>>
 						<input type="text" name="email" value=<?php echo $_SESSION['email']; ?>>
-						<input type="text" name="phone" value="phone">
+						<input type="text" name="phone" value=<?php echo $_SESSION['phone']; ?>>
 						<input type="password" name="password" id="password">
 						<input type="password" name="cpassword" id="cnfrmpassword">
 					</div>
@@ -201,24 +201,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		}
 
 		function checkPasswords() {
-			var password = document.getElementById("password").value;
+			var password = document.getElementById("password");
 			var confirmPassword = document.getElementById("cnfrmpassword").value;
-			if (password == "") {
-				password = "<?php echo $_SESSION['password'];?>"
+			if (password.value == "") {
+				password.value = "<?php echo $_SESSION['password']; ?>" ;
 				document.sign_up.submit();
 
-			}  
-			else {
+			} else {
 				if (confirmPassword == "") {
 					msg("Please confirm your password");
-				} 
-				
-				else if (password.length < 6) {
+				} else if (password.value.length < 6) {
 					msg("password is less than 6");
-				} else if (password.length > 15) {
+				} else if (password.value.length > 15) {
 					msg("Password is greater than 15");
 				} else {
-					if (confirmPassword != password) {
+					if (confirmPassword != password.value) {
 						msg("Confirm password doesn't equal password");
 					} else {
 						document.sign_up.submit();

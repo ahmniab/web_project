@@ -100,7 +100,7 @@ if (isset($_POST["logout"])) {
                         <input type="text" readonly value=<?php echo $_SESSION['user_name']; ?>>
                         <input type="text" readonly value=<?php echo $_SESSION['name']; ?>>
                         <input type="text" readonly value=<?php echo $_SESSION['email']; ?>>
-                        <input type="text" readonly value="phone">
+                        <input type="text" readonly value=<?php echo $_SESSION['phone']; ?>>
                     </div>
                 </div>
                 <form action="user_profile.php" method="post">

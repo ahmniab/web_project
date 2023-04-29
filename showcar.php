@@ -30,7 +30,7 @@ if (isset($_POST['car_num'])) {
     <!-- normalize -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- ico -->
-    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="img/main-logo.ico" type="image/x-icon">
 
 
     <title>Inspect</title>
