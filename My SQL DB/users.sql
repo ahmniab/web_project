@@ -97,6 +97,7 @@ CREATE TABLE `users` (
   `name` text NOT NULL,
   `password` text NOT NULL,
   `email` text NOT NULL,
+  `phone` varchar(15) NOT NULL,
   `admin` tinyint(1) NOT NULL,
   `profile` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -105,10 +106,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_name`, `name`, `password`, `email`, `admin`, `profile`) VALUES
-('123', '', '123456', '', 0, 'img/blank-profile.png'),
-('ahmed', 'ahmed', 'no', 'no@no', 1, 'img/blank-profile.png'),
-('hamed', 'hi', 'kk', 'uuujj', 0, 'img/blank-profile.png');
+INSERT INTO `users` (`user_name`, `name`, `password`, `email`, `phone`, `admin`, `profile`) VALUES
+('123', '', '123456', '', '', 0, 'img/blank-profile.png'),
+('ahmed', 'ahmed', 'no', 'no@no', '123', 1, 'img/ahmed.jpg'),
+('hamed', 'hi', 'kk', 'uuujj', '', 0, 'img/blank-profile.png');
 
 --
 -- Indexes for dumped tables
@@ -119,7 +120,7 @@ INSERT INTO `users` (`user_name`, `name`, `password`, `email`, `admin`, `profile
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_name`);
-
+COMMIT;
 --
 -- AUTO_INCREMENT for dumped tables
 --
