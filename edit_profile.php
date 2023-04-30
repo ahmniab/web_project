@@ -152,6 +152,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			<div class="spinner"></div>
 		</div>
 		<form name="sign_up" action="edit_profile.php" method="POST" enctype="multipart/form-data">
+			<?php
+			if (isset($wrongMsg)) {
+				echo '<div class="alert alert-danger" role="alert"><i class="fa-solid fa-circle-exclamation fa-beat"></i>' . $wrongMsg . '</div>';
+			}
+			?>
 			<div class="alert alert-danger" role="alert" id="alert"></div>
 			<div class="info-box">
 				<div class="photo-box">
