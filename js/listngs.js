@@ -26,20 +26,20 @@ function scrollToTop() {
     });
 }
 
-// random order
-const container = document.querySelector('.container');
-const cards = container.querySelectorAll('.card');
+// // random order
+// const container = document.querySelector('.container');
+// const cards = container.querySelectorAll('.card');
 
-// Convert the NodeList to an array so that we can use the array shuffle method
-const cardsArray = Array.from(cards);
+// // Convert the NodeList to an array so that we can use the array shuffle method
+// const cardsArray = Array.from(cards);
 
-// Shuffle the array using the Fisher-Yates algorithm
-for (let i = cardsArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [cardsArray[i], cardsArray[j]] = [cardsArray[j], cardsArray[i]];
-}
+// // Shuffle the array using the Fisher-Yates algorithm
+// for (let i = cardsArray.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     [cardsArray[i], cardsArray[j]] = [cardsArray[j], cardsArray[i]];
+// }
 
-// Append the shuffled cards back to the container in their new order
-for (let i = 0; i < cardsArray.length; i++) {
-    container.appendChild(cardsArray[i]);
-}
+// // Append the shuffled cards back to the container in their new order
+// for (let i = 0; i < cardsArray.length; i++) {
+//     container.appendChild(cardsArray[i]);
+// }
