@@ -1,4 +1,3 @@
-
 <?php
 include 'connection.php';
 session_start();
@@ -20,9 +19,6 @@ if (isset($_SESSION['admin'])) {
     header('Location: index.php');
     exit;
 
-    echo "<pre>";
-    print_r($_SESSION);
-    echo "</pre>";
 } else {
     header('Location: home.html');
     exit;

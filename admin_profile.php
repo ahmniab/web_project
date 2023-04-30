@@ -26,14 +26,13 @@
                     if (isset($_POST['car_name'])) {
                         $car_name = $_POST['car_name'];
                         $car_model = $_POST['model'];
-                        $car_caption = nl2br($_POST['caption']);
-
+                        $car_caption = nl2br($_POST['caption']); // \n ==> <br>
                         $car_price = $_POST['price'];
                         if (isset($_FILES['img'])) {
                             $file_name = $_FILES['img']['name'];
                             $file_tmp = $_FILES['img']['tmp_name'];
                             $file_type = $_FILES['img']['type'];
-                            $file_ext = strtolower(end(explode('.', $file_name)));
+                            $file_ext = strtolower(end(explode('.', $file_name))); 
                             $extensions = array("jpeg", "jpg", "png");
 
                             if (!in_array($file_ext, $extensions)) {
