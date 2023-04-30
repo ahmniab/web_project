@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 include 'connection.php';
 
 session_start();
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		}
 	} else {
 
-		$sql = "UPDATE users SET user_name='$username',`name`='$name', email='$email', `password`='$password'
+		$sql = "UPDATE users SET user_name='$username',`name`='$name', email='$email', `password`='$password' ,phone = '$phone '
 			 WHERE user_name='$user_name_Session'";
 
 
@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	header('Location: user_profile.php');
 	exit;
 }
-?>
+?> -->
 <!DOCTYPE html>
 <html>
 
