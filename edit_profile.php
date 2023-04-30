@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			// echo $wrongMsg;
 		} else {
 
-			$sql = "UPDATE users SET user_name='$username',`name`='$name', email='$email', `password`='$password'
+			$sql = "UPDATE users SET user_name='$username',`name`='$name', email='$email', phone='$phone', `password`='$password'
 				 WHERE user_name='$user_name_Session'";
 
 
@@ -54,12 +54,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$_SESSION['user_name'] = $username;
 				$_SESSION['name'] = $name;
 				$_SESSION['email'] = $email;
+				$_SESSION['phone'] = $phone;
 				$_SESSION['password'] = $password;
 			}
 		}
 	} else {
 
-		$sql = "UPDATE users SET user_name='$username',`name`='$name', email='$email', `password`='$password' ,phone = '$phone '
+		$sql = "UPDATE users SET user_name='$username',`name`='$name', email='$email', phone='$phone', `password`='$password'
 			 WHERE user_name='$user_name_Session'";
 
 
@@ -70,6 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$_SESSION['user_name'] = $username;
 			$_SESSION['name'] = $name;
 			$_SESSION['email'] = $email;
+			$_SESSION['phone'] = $phone;
 			$_SESSION['password'] = $password;
 		}
 	}
@@ -93,6 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	header('Location: user_profile.php');
 	exit;
+
 }
 ?> -->
 <!DOCTYPE html>
