@@ -199,7 +199,7 @@ button {
 }
 
 .parent> :nth-child(3) section button {
-    background-color: #000;
+    background-color: #817c7c;
     width: 50px;
     height: 50px;
     border-radius: 50%;
